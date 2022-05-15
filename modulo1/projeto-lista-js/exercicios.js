@@ -87,21 +87,28 @@ function checaStringsMesmoTamanho(string1, string2) {
 // EXERCÍCIO 09
 function retornaPrimeiroElemento(array) {
   // implemente sua lógica aqui
-    return array[0]
+    //return array[0]
+    return array.at(0)
 }
 
 // EXERCÍCIO 10
 function retornaUltimoElemento(array) {
   // implemente sua lógica aqui
-return array[array.length - 1]
+//return array[array.length - 1]
+    return array.at(-1)
 }
 
 // EXERCÍCIO 11
 function trocaPrimeiroEUltimo(array) {
 // implemente sua lógica aqui
-    let first = array.at(0)
-    let second = array.at(-1)
 
+let temp = array[0]
+
+array[0] = array[array.length-1]
+
+array[array.length-1] = temp
+
+return array
 }
 
 // EXERCÍCIO 12
@@ -120,11 +127,28 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
 function checaRenovacaoRG() {
   // implemente sua lógica aqui
 
+  const anoatual =  Number(prompt("Qual o ano atual?"))
+  const anonasci = Number(prompt("Qual o ano de nascimento?"))
+  const anoemissao = Number(prompt("Qual ano sua rg foi emitida?"))
+  const idade = anoatual - anonasci
+  const identidade = anoatual - anoemissao
+
+  const pesssoas20anos = idade <= 20 && identidade >= 5
+  const pessoas20e50anos = idade > 20 && idade < 50 && identidade >= 10 
+  const pessoasmais50anos = idade > 50 && identidade >= 15
+
+console.log(pesssoas20anos || pessoas20e50anos || pessoasmais50anos)
+
 }
 
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
   // implemente sua lógica aqui
+let anobi = ano % 400 === 0
+let anobi1 = ano % 4 === 0 && ano % 100 !== 0
+
+return anobi || anobi1
+
 
 }
 
