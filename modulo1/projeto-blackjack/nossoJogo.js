@@ -8,10 +8,11 @@
 
 
 let boasvindas = alert("♥️♦️♣️Seja bem-vindo(a) ao jogo de Blackjack!♥️♦️♣️")
-   if(confirm("♦️Quer iniciar uma nova rodada?♦️") === true) {
-	   alert("♦️Se prepara!...Jogando as cartas!...♦️")
-   } else {'1'
-	   alert("♦️Ahh, que pena, o jogo acabou!♦️")}
+if (confirm("♦️Quer iniciar uma nova rodada?♦️") === true) {
+   alert("♦️Se prepara!...Jogando as cartas!...♦️")
+} else {
+   alert("♦️Ahh, que pena, o jogo acabou!♦️")
+}
 
 
 const carta = comprarCarta()
@@ -34,6 +35,6 @@ if (carta.usario !== carta.computador && carta.usario > carta.computador) {
    ♣️Empate! Quase você chega lá, tente novamente!♣️
    Usuário - cartas: ${carta.texto} - pontuação: ${carta.valor}
    Computador - cartas: ${carta.texto} - pontuação: ${carta.valor}`)
-} 
+}
 
 alert("♦️Quer ir outra partida?♦️ \n♣️ É Só dar F5 na página!♣️")
