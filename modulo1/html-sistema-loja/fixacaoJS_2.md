@@ -1,0 +1,5 @@
+~~~javascript
+function calculaPrecoTotal(quantidade) {
+      
+}
+~~~

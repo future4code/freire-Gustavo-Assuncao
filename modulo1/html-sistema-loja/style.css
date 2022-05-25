@@ -1,0 +1,80 @@
+
+#barra-colorida {
+    background-color: #5cc7b2;
+    margin: auto;
+    padding: auto;
+    overflow: auto;
+}
+
+/* titulocabecalho */
+h1{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    
+}
+
+
+.cabecalho-subtitulo{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-size: 20px ;
+    
+}
+
+
+.barra-de-navegacao{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-size: 20px ;
+}
+
+icones-barra-de-navegacao{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    font-size: 20px ;
+}
+
+.destaque {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 30px;
+    color: rgb(87, 30, 210);
+}
+
+/* editando imagens de destaque */
+.img-destaques {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+
+/* editando rodape da pagina */
+.rodape{
+    padding: 1%;
+    display: flex;
+    padding-right: 45%;
+}
+
+/* editando icones da pagina */
+.rodape-imagem{
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+/* texto para seguir nas redes sociais */
+.siga-nas-redes {
+    display: flex;
+    justify-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 15px;
+} 
