@@ -77,7 +77,7 @@ div img {
 #container-de-descricao {
     background-color: #2274a5;
     color: white;
-    padding-top: 120px;
+    padding-top: 80px;
 
 }
 
@@ -113,10 +113,11 @@ div img {
 div:nth-child(2),
 div:last-child {
     text-align: center;
+
 }
 
 table {
-    width: 60%;
+    margin: auto auto;
 }
 
 td button {
@@ -125,6 +126,7 @@ td button {
     height: 30px;
     border-radius: 5px;
     color: black;
+    
 }
 
 .container-do-search {
@@ -141,6 +143,8 @@ td button {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+    margin: auto auto;
+    display: block;
 }
 
 #back-button:hover {
