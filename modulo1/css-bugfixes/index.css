@@ -7,6 +7,7 @@
 * {
     margin: 0;
     padding: 0;
+    
 }
 
 h2 {
@@ -37,6 +38,8 @@ div img {
     background: black;
 }
 
+
+
 .botao-amarelo {
     background-color: #ffaf43;
     width: 250px;
@@ -44,16 +47,20 @@ div img {
     border-radius: 5px;
     font-size: 20px;
     color: white;
+
 }
 
 .botao-amarelo:hover {
     background-color: #c44f00;
+    
 }
 
 .container {
     height: 500px;
     text-align: center;
 }
+
+
 
 .icone {
     height: 15px;
@@ -77,15 +84,16 @@ div img {
 
 #container-para-comprar {
     background-color: #e7eb90;
+    text-align: center;
 }
 
 #container-para-comprar>p {
     color: #c44f00;
     padding: 100px 0;
     font-size: 60px;
+    display: block;
+
 }
-
-
 /**
   *
   *  ESTILOS COMPRAR 
