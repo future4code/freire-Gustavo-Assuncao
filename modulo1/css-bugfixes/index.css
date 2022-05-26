@@ -31,7 +31,8 @@ img {
 }
 
 div>p:first-child {
-    display: inline;
+    display: block;
+
 }
 
 div img {
@@ -77,11 +78,18 @@ div img {
     background-color: #2274a5;
     color: white;
     padding-top: 120px;
+
+}
+
+#paragrafo-secao-azul {
+    width: 180px;
+    margin: auto;
 }
 
 #container-de-descricao>ol {
     padding: 30px 0;
-    
+    margin: auto;
+    width: 190px ;
 }
 
 #container-para-comprar {
@@ -94,8 +102,8 @@ div img {
     padding: 100px 0;
     font-size: 60px;
     display: block;
-
 }
+
 /**
   *
   *  ESTILOS COMPRAR 
