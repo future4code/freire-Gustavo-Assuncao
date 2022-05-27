@@ -53,8 +53,10 @@ div>p:first-child {
 
 .botao-amarelo:hover {
     background-color: #c44f00;
-    
+    color: aliceblue;
 }
+
+
 
 .container {
     height: 500px;
@@ -131,6 +133,15 @@ td button {
     color: black;
     
 }
+button:hover {
+    background-color: #1a00c4;
+    color: aliceblue;
+}
+
+button:active {
+    background-color: #c4007f;
+    color: aliceblue;
+}
 
 .container-do-search {
     margin-top: 20px;
@@ -155,4 +166,9 @@ td button {
 
 #back-button:hover {
     background-color: #635a3d
+}
+
+#back-button:active {
+    background-color: #c4007f;
+    color: aliceblue;
 }
