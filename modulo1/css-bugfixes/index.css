@@ -83,6 +83,7 @@ div>p:first-child {
   *
   **/
 
+
 #container-de-descricao {
     background-color: #2274a5;
     color: white;
@@ -128,7 +129,8 @@ div:last-child {
 table {
     margin: auto auto;
     text-align: center;
-
+    border-collapse: separate; 
+    border-spacing: 30px 0px; 
 }
 
 td button {
