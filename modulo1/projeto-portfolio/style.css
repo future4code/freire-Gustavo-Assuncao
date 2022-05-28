@@ -1,26 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
 
 *{
-    font-family: 'Inconsolata', monospace;
     font-size: 100%;
     margin: 0;
     padding: 0;
 }
+/* Aqui estamos editando a barra de navegação */
 
 .header{	
 	display:flex;
     flex-flow: wrap;
     justify-content:space-between;
-	}
+}
 
 .header-icon{
     width: 300px;
     height: auto;
     margin-left: 35px;
-	}
+}
 
 .header-menu{
-    
     text-decoration:none;
     list-style:none;
 	display:flex;
@@ -29,9 +28,51 @@
     margin-right: 35px;
     margin-top: 15px;
 }
+/* Aqui começa a primeira seção */
 
-.about-me {
-    background-color: gray;
+main{
+    margin-bottom: 48px; 
+
 }
 
 
+.about-me {
+    background: rgb(2,0,36);
+    background: linear-gradient(166deg, rgba(2,0,36,1) 0%, rgba(15,15,87,1) 35%, rgba(29,97,189,1) 100%);
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.about-me-text-greeting{
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    padding-top: 100px;
+    font-weight: 400px;
+    font-size: 24px;  
+    margin-left: 320px;
+}
+
+h2{
+    margin-left: 120px; 
+}
+.about-me-text {
+    color: white;
+    font-family: 'Ubuntu', sans-serif;
+    width: 500px;
+    display: block;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+.skills {
+    margin-top: 20px;
+}
+
+.about-me-photo {
+    width: 300px;
+    height: auto;
+    margin-left: auto;
+    margin-top: auto;
+    display: flex;
+}
