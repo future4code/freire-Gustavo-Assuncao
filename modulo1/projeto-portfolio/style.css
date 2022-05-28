@@ -20,6 +20,9 @@
 	}
 
 .header-menu{
+    
+    text-decoration:none;
+    list-style:none;
 	display:flex;
     gap: 32px;
     justify-content: space-between;
@@ -27,8 +30,8 @@
     margin-top: 15px;
 }
 
-li {
-    text-decoration-style: none;
-    list-style:none;
+.about-me {
+    background-color: gray;
 }
+
 
