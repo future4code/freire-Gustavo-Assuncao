@@ -71,7 +71,7 @@ a {
     position: absolute;
 }
 
-.skills {
+.about-me-skills {
     margin-top: 20px;
 }
 
@@ -107,12 +107,14 @@ a {
     width: 600px;
     display: inline;
     margin-left: 5%;
+    border-radius:20px;
 }
 
 .my-projects-subtitle2 {    
     width: 608px;
     display: inline;
     margin-left: 15px;
+    border-radius:20px;
 }
 
 .my-projects-text{
@@ -120,6 +122,8 @@ a {
     text-align: center;
     margin-left: 110px;
     font-size: 18px;
+
+
 }
 .my-projects-text2{
     display: inline-block;    
@@ -129,3 +133,45 @@ a {
     font-size: 18px;
 
 }
+/* Habilidades */
+.hard-soft-skills-main{
+    display: block;
+    align-self: auto;
+    height: 400px;
+}
+.hard-soft-skills-title {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    font-size: 25px;
+    text-align: center;
+}
+.card{
+    margin-top: 25px;
+    /* border: 1px dashed gray; */
+    height: 380px;
+    width: 350px;
+    display: inline-block;
+    margin-left: 10%;
+    text-align:  center;
+    
+}
+
+.card1{
+    margin-top: 25px;
+    /* border: 1px dashed gray; */
+    height: 380px;
+    width: 350px;
+    display: inline-block;
+    margin-left: 15px;
+    text-align:  center;
+}
+
+.card2{
+    /* border: 1px dashed gray; */
+    height: 380px;
+    width: 350px;
+    display: inline-block;
+    margin-left: 15px;
+    text-align:  center;
+}
+
