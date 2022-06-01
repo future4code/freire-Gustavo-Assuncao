@@ -33,6 +33,7 @@ header {
     align-items: stretch;
     row-gap: 100px;
     text-align: center;
+    background-color: aquamarine;
 }
 
 img {
