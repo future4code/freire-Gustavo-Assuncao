@@ -1,24 +1,29 @@
-.bigcard-container {
+import styled from 'styled-components'
+
+export const BigCard = styled.div`
     display: flex;
     align-items: center;
-    border: 1px solid black;
-    padding: 20px 10px;
+    border: 1px dashed black;
+    padding: 10px 10px;
     margin-bottom: 10px;
     height: 200px;
-}
+    border-radius: 8px;
 
-.bigcard-container > img {
+    img {
     width: 70px;
     margin-right: 10px;
     border-radius: 50%;
 }
 
-.bigcard-container h4 {
-    margin-bottom: 15px;
+h4 {
+    margin-bottom: 1px;
 }
 
-.bigcard-container > div {
+div {
     display: flex;
     flex-direction: column;
     justify-items: flex-start;
 }
+
+`
+
