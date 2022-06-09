@@ -10,25 +10,46 @@ const MainContainer = styled.div`
 `
 
 class App extends React.Component {
+  state = {
+    pessoas: [
+
+      {
+        nomeUsuario:'Paula',
+        fotoUsuario:'https://picsum.photos/50/40',
+        fotoPost:'https://picsum.photos/200/130'
+      },
+      {
+        nomeUsuario:'Antonio',
+        fotoUsuario:'https://picsum.photos/50/30',
+        fotoPost:'https://picsum.photos/200/140'
+      },
+      {
+      nomeUsuario:'Marcos',
+      fotoUsuario:'https://picsum.photos/50/30',
+      fotoPost:'https://picsum.photos/200/140',
+      }
+    ]
+  };
+
   render() {
+
+const listaDeUsuarios = this.state.pessoas.map((usuarios) => {
+  return (
+    <p>{usuarios.nomeUsuario} - {usuarios.fotoUsuario} - {usuarios.fotoPost}</p>
+  );
+});
     return (
       <MainContainer>
         <Post
-          nomeUsuario={'Paula'}
-          fotoUsuario={'https://picsum.photos/50/40'}
-          fotoPost={'https://picsum.photos/200/130'}
+          {...listaDeUsuarios}
         />
 
         <Post
-          nomeUsuario={'Antonio'}
-          fotoUsuario={'https://picsum.photos/50/30'}
-          fotoPost={'https://picsum.photos/200/140'}
+          {...listaDeUsuarios}
         />
 
         <Post
-          nomeUsuario={'Marcos'}
-          fotoUsuario={'https://picsum.photos/50/20'}
-          fotoPost={'https://picsum.photos/200/151'}
+          {...listaDeUsuarios}
         />
       </MainContainer>
     );
