@@ -6,28 +6,14 @@
     width: 40%;
     height: 35em;
     border-radius: 2%;
-}
 
-.CampoDeConversa {
-    display: flex;
-    height: 100%;
-    width: auto;
-}
-
-.inputs {
-    display: flex;
-    justify-content: space-between;
-    height: 3em;
-    align-items: center;
-    width: auto;
-    margin: 0 1em 0 1em ; 
-    gap: 2%;
 }
 
 .button {
     display: flex;
+    flex-direction:row ;
     width: 4em;
-    height: 2em;
+    height: 1px;
     border: 1px solid grey;
     border-radius: 15px ;
 }
@@ -37,11 +23,25 @@
     width: 30%;
     border: 1px solid grey;
     border-radius: 15px ;
+    flex-direction:row ;
 }
 
 .mensagemInput {
     height: 2em;
     width: 60%;
     border: 1px solid grey;
+    border-radius: 15px;
+    flex-direction:row ;
+}
+
+
+.balaozinho {
+    background-color: greenyellow;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5em;
+    width: 3em;
+    height: 3em;
+    margin: 0 1em 5em 1em ; 
     border-radius: 15px;
 }

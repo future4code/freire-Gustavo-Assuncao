@@ -1,15 +1,18 @@
 import React from "react";
 import CampoUsuario from "./components/campoUsuario/index";
-import CampoConversa from "./components/conversa/index";
 
-function App() {
-  return (
-    <div className="App"> 
-    <CampoConversa/>
-    <CampoUsuario/>
 
-    </div>
-  );
+
+class App extends React.Component {
+
+  render() {
+    return (
+      <div>
+        <h1>WhatsLab</h1>
+        <CampoUsuario />
+      </div>
+    )
+  }
 }
 
 export default App;
