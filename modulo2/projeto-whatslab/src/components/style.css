@@ -1,0 +1,47 @@
+.App {
+    display: flex ;
+    flex-direction: column;
+    margin: 30px auto;
+    border: 1px solid grey;
+    width: 40%;
+    height: 35em;
+    border-radius: 2%;
+}
+
+.CampoDeConversa {
+    display: flex;
+    height: 100%;
+    width: auto;
+}
+
+.inputs {
+    display: flex;
+    justify-content: space-between;
+    height: 3em;
+    align-items: center;
+    width: auto;
+    margin: 0 1em 0 1em ; 
+    gap: 2%;
+}
+
+.button {
+    display: flex;
+    width: 4em;
+    height: 2em;
+    border: 1px solid grey;
+    border-radius: 15px ;
+}
+
+.usuarioInput {
+    height: 2em;
+    width: 30%;
+    border: 1px solid grey;
+    border-radius: 15px ;
+}
+
+.mensagemInput {
+    height: 2em;
+    width: 60%;
+    border: 1px solid grey;
+    border-radius: 15px;
+}
