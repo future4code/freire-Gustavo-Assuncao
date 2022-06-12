@@ -44,26 +44,30 @@ class CampoUsuario extends React.Component {
 
     const usuarioMensagem = this.state.conversa.map((chat) =>{
       return (
-        <p><strong>{chat.usuario}:</strong> {chat.mensagem}</p>
+        <div className='balaoMsg'>
+          <strong>{chat.usuario}</strong> {chat.mensagem}
+        </div>
       )
     })
       return(
-      <div className="App">
-         
+      <div className="ContainerInputs">
          <div className="balaozinho">{usuarioMensagem}</div>
-        <input  className="usuarioInput"
-        placeholder={"Usuário"}
+        <div className="barraInputs">
+        <input  
+        className="usuarioInput"
         value={this.state.valorInputUsuario}
         onChange={this.onChangeInputUsuario}
+        placeholder={"Usuário"}
         />
-
-        <input className="mensagemInput"  
+        <input 
+        className="mensagemInput"  
         value={this.state.valorInputMensagem}
-        placeholder={"Mensagem"}
         onChange={this.onChangeInputMensagem}
         onKeyDown={this.onEnterMensagem}
+        placeholder={"Mensagem"}
         />
-        <button onClick={this.enviaMensagem}>Enviar</button>
+        <button onClick={this.enviaMensagem}> Enviar </button>
+        </div>
       </div>
     );
   }

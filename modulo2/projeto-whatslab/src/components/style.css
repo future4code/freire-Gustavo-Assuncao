@@ -1,47 +1,75 @@
+
+h1 {
+background-color: rgb(222, 236, 238);
+width: 100%;
+display: flex;
+justify-content: center;
+border-radius: 5px;
+
+}
 .App {
-    display: flex ;
-    flex-direction: column;
     margin: 30px auto;
-    border: 1px solid grey;
-    width: 40%;
+    width: 35em;
     height: 35em;
-    border-radius: 2%;
 
 }
 
-.button {
-    display: flex;
-    flex-direction:row ;
-    width: 4em;
-    height: 1px;
-    border: 1px solid grey;
-    border-radius: 15px ;
+button {
+    width: 12%;
+    height: 2rem;
+    border: 1px solid black;
+    border-radius: 10px;
 }
+
 
 .usuarioInput {
     height: 2em;
-    width: 30%;
-    border: 1px solid grey;
-    border-radius: 15px ;
-    flex-direction:row ;
+    width: 20%;
+    border: 1px solid black;
+    border-radius: 5px ;
 }
 
 .mensagemInput {
     height: 2em;
     width: 60%;
-    border: 1px solid grey;
-    border-radius: 15px;
-    flex-direction:row ;
+    border: 1px solid black;
+    border-radius: 5px;
 }
 
-
 .balaozinho {
-    background-color: greenyellow;
+    padding-left: 15px;
+    width: auto;
+    min-height: 60vh;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border: 1px solid black;
+    background-image: url(../img/background.jpg);
+}
+
+.balaozinho p {
+    width: 10em;
+    min-height: 2em;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    border: 1px solid black;
+}
+
+.barraInputs {
+    min-height: 7vh;
+    width: auto;
+    border: 1px solid black;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+    border-top-style: none;
     display: flex;
-    flex-direction: column;
-    margin-bottom: 5em;
-    width: 3em;
-    height: 3em;
-    margin: 0 1em 5em 1em ; 
-    border-radius: 15px;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(76, 76, 76, 0.075);
+}
+
+.balaoMsg {
+    background-color: #d2eafd;
+    width: fit-content;
+    margin-top: 10px;
 }
