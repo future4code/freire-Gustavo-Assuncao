@@ -34,14 +34,9 @@ class CampoUsuario extends React.Component {
       this.setState({valorInputMensagem: event.target.value});
     }; 
 
-    onEnterMensagem = (event) =>{
-      if (event.key === 'Enter') {
-        this.enviaMensagem();
-      }
-    }
+
 
   render() {
-
     const usuarioMensagem = this.state.conversa.map((chat) =>{
       return (
         <div className='balaoMsg'>
