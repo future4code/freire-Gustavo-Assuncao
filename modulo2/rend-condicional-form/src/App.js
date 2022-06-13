@@ -1,10 +1,8 @@
 import React from 'react';
-import './components/Etapa1'
 import Etapa1 from './components/Etapa1';
 import Etapa2 from './components/Etapa2';
 import Etapa3 from './components/Etapa3';
 import Final from './components/Final';
-
 
 class App extends React.Component {
     constructor(props) {
@@ -13,7 +11,6 @@ class App extends React.Component {
     etapa: 1,
       };
   }
-
 
   renderizaEtapa = () => {
     switch (this.state.etapa) {
@@ -37,7 +34,7 @@ class App extends React.Component {
       <div className="App">
         {this.renderizaEtapa()}
         <br />
-        {this.state.etapa !==4 &&(
+        {this.state.etapa !== 4 &&(
         <button onClick={this.proximaEtapa}>Próxima etapa</button>
         )}
       </div>

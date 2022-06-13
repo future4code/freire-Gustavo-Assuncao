@@ -1,5 +1,7 @@
 import React from "react";
-import '../'
+
+
+
 
 const Etapa1 = () => {
     return (

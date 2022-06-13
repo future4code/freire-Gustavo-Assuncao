@@ -1,7 +1,6 @@
 import React from "react";
 
 
-
 const Etapa2 = () => {
     return (
         <form className="DadosGerais">
