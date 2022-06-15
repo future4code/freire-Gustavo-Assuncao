@@ -9,7 +9,7 @@ const TarefaList = styled.ul`
 
 const Tarefa = styled.li`
   text-align: left;
-  text-decoration: ${({completa}) => (completa ? 'line-through' : 'none')};
+  text-decoration: ${({ completa }) => (completa ? 'line-through' : 'none')};
 `
 
 const InputsContainer = styled.div`
@@ -19,11 +19,11 @@ const InputsContainer = styled.div`
 `
 
 class App extends React.Component {
-    state = {
-      tarefas: [],
-      inputValue: '',
-      filtro: ''
-    }
+  state = {
+    tarefas: [],
+    inputValue: '',
+    filtro: ''
+  }
 
   componentDidUpdate() {
 
@@ -34,24 +34,40 @@ class App extends React.Component {
   };
 
   onChangeInput = (event) => {
-    this.setState({inputValue: event.target.value})
+    this.setState({ inputValue: event.target.value })
   }
 
   criaTarefa = () => {
     const novoInputValue = {
-        id: Date.now(), // aqui, pode deixar o valor Date.now() para todas as tarefas as serem criadas
-        texto:this.state.inputValue, // aqui, o texto da tarefa virá do input controlado guardado no estado
-        completa: false // aqui, pode deixar o valor false para todas as tarefas as serem criadas, pq a tarefa sempre vai começar como não completa.
-      }
+      id: Date.now(), // aqui, pode deixar o valor Date.now() para todas as tarefas as serem criadas
+      texto: this.state.inputValue, // aqui, o texto da tarefa virá do input controlado guardado no estado
+      completa: false // aqui, pode deixar o valor false para todas as tarefas as serem criadas, pq a tarefa sempre vai começar como não completa.
+    }
 
-      const novaListaInputs = [...this.state.tarefas, novoInputValue]
+    const novaListaInputs = [...this.state.tarefas, novoInputValue]
 
-      this.setState({tarefas: novaListaInputs})
-    
+    this.setState({ tarefas: novaListaInputs })
+
   }
 
-  selectTarefa = (id) => {
+  selectTarefa = (idList) => {
 
+    const novaListaInputs = this.tarefas.map((task)=> {
+      if (idList === task.id) {
+        const novoInputValue = {
+          ...task, 
+          filtro: !task.filtro
+        }
+        return novoInputValue
+      } else {
+        return task
+      }
+
+
+
+    })
+
+    this.setState ({novoListaInputs: novaListaInputs})
   }
 
   onChangeFilter = (event) => {
@@ -74,10 +90,10 @@ class App extends React.Component {
       <div className="App">
         <h1>Lista de tarefas</h1>
         <InputsContainer>
-          <input value={this.state.inputValue} onChange={this.onChangeInput}/>
+          <input value={this.state.inputValue} onChange={this.onChangeInput} />
           <button onClick={this.criaTarefa}>Adicionar</button>
         </InputsContainer>
-        <br/>
+        <br />
 
         <InputsContainer>
           <label>Filtro</label>
