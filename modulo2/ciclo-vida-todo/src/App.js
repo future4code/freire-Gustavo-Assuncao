@@ -38,7 +38,16 @@ class App extends React.Component {
   }
 
   criaTarefa = () => {
+    const novoInputValue = {
+        id: Date.now(), // aqui, pode deixar o valor Date.now() para todas as tarefas as serem criadas
+        texto:this.state.inputValue, // aqui, o texto da tarefa virá do input controlado guardado no estado
+        completa: false // aqui, pode deixar o valor false para todas as tarefas as serem criadas, pq a tarefa sempre vai começar como não completa.
+      }
 
+      const novaListaInputs = [...this.state.tarefas, novoInputValue]
+
+      this.setState({tarefas: novaListaInputs})
+    
   }
 
   selectTarefa = (id) => {
