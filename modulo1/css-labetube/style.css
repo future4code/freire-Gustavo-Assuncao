@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: orangered;
+    height: 9vh;
+}
+
+#pesquisar {
+    height: 5vh;
+    width: 15vh;
+    margin-right: 10vh;
+    text-align: center;
+}
+
+/* ---------------------------------------------------- */
+.container {
+    margin-top: 4%;
+    margin-left: 1%;
+    gap: 15px ;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    text-align: center;
+    row-gap: 20px;
+    margin-bottom: 4vh;
+
+}
+
+img {
+    width: 100%;
+}
+
+.card {
+    border: 1px solid black;
+
+}
+
+/* -------------------------------------------------- */
+footer {
+    background-color: orangered;
+    height: 9vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
+}
+
+/* -------------------------------- */
+/* Outra página */
+.container-video {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin-top: 3%;
+    margin-bottom: 5%;
+
+}
+
+.video1 {
+    height: 40%;
+    width: 60%;
+}
+
+/* ----------------------------- */
+
+@media screen and (max-device-width : 480px) {
+    /* celulares */
+    .container {
+        display: block;
+    }
+
+
+}
