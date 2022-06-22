@@ -2,16 +2,19 @@
 import React from 'react';
 
 
-function OutraTela () {
+class OutraTela extends React.Component {
+
+    render() {
     return (
       <div className="telaDeCadastro">
-        <button className='buttonTrocarDeTela'>Trocar de Tela</button>
+        <button className='buttonTrocarDeTela'>Tela de cadastro</button>
         <div className="containerTelaDeCadastro"> 
         <h3>Usuários Cadastrados</h3>
         </div>
       </div>
     );
   }
+}
   
   export default OutraTela;
   

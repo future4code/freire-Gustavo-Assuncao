@@ -1,20 +1,20 @@
 import React from 'react';
 import './App.css';
-import OutraTela from './components';
+import OutraTela from './components/index';
 
 class App extends React.Component {
 
-  // TrocardeTela =() => {
-  //   // this.setState({OutraTela})
-  //   console.log('clica porra')
-  // };
+  TrocardeTela =() => {
+    // this.setState({OutraTela})
+    console.log('clica porra')
+  };
 
   render() {
 
     return (
       <div className="telaDeCadastro">
         <button className='buttonTrocarDeTela' 
-         onClick={()=> this.setState({OutraTela})}
+         onClick={this.OutraTela} 
          >Trocar de Tela</button>
         <div className="containerTelaDeCadastro">
           <h3>Tela de Cadastro</h3>
