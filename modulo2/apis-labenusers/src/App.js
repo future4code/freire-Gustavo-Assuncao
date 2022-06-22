@@ -1,66 +1,46 @@
 import React from 'react';
 import './App.css';
-import OutraTela from './components/index';
+import TelaListaUsuarios from './components/TelaListaUsuarios';
+import TelaCadastro from './components/TelaCadastro';
+
 
 class App extends React.Component {
+    state = {
+      telaAtual: "cadastro"
+    }
+// Temos duas telas, criei um estado para começar pela tela atual 
+// agora vamos criar as duas telas abaixo: e chamamos em return
+      escolheTela = () => {
+        switch (this.state.telaAtual) {
+        case "cadastro":
+          return <TelaCadastro irParaLista = {this.irParaLista} />
+        case "lista":
+          return <TelaListaUsuarios irParaCadastro = {this.irParaCadastro}/>
+        default:
+          return <div>Erro! Página não encontrada :(</div>
+      }
+    }
 
-  TrocardeTela =() => {
-    // this.setState({OutraTela})
-    console.log('clica porra')
-  };
+// agora vamos fazer uma função para mudar de telas 
+// e depois temos que passar essas props para dentro meu case
+
+irParaCadastro = () => {
+this.setState({telaAtual:"cadastro"})
+}
+
+irParaLista = () => {
+  this.setState({telaAtual:"lista"})
+}
 
   render() {
 
     return (
-      <div className="telaDeCadastro">
-        <button className='buttonTrocarDeTela' 
-         onClick={this.OutraTela} 
-         >Trocar de Tela</button>
-        <div className="containerTelaDeCadastro">
-          <h3>Tela de Cadastro</h3>
-          <input className='inputCadastro'
-            type="text"
-            placeholder="Nome"
-          />
-          <input className='inputCadastro'
-            type="text"
-            placeholder="Email"
-          />
-          <button id='buttonCriarUsuario'>Criar Usuário</button>
-
-
-        </div>
+      <div>
+        {this.escolheTela()}
       </div>
     )
   }
 }
 
 export default App;
-
-
-// function App() {
-//   return (
-//     <div className="telaDeCadastro">
-//       <button 
-//       className='buttonTrocarDeTela'
-//       onClick={OutraTela}
-//       >Trocar de Tela
-//       </button>
-//       <div className="containerTelaDeCadastro"> 
-//       <h3>Tela de Cadastro</h3>
-//       <input className='inputCadastro'
-//       type="text"
-//       placeholder="Nome"
-//        />
-//       <input className='inputCadastro'
-//       type="text"
-//       placeholder="Email"
-//        />
-//        <button id='buttonCriarUsuario'>Criar Usuário</button>
-
-
-//       </div>
-//     </div>
-//   );
-// }
 
