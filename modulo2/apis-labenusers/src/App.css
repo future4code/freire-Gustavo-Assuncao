@@ -1,0 +1,34 @@
+
+.containerTelaDeCadastro {
+  display: flex;
+  flex-direction: column;
+  border: 1px dashed black;
+  margin-top: 5%;
+  width: 30%;
+  align-items: center;
+  margin: 10% 0 0 30%;
+  border-radius: 15px; 
+} 
+
+.inputCadastro {
+  margin-bottom: 15px;
+  width: 50%;
+  box-sizing: border-box;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  border-bottom: 1px solid rgb(55, 54, 54);
+
+} 
+
+ button {
+  margin-bottom: 30px;
+  width: 50%;
+  box-sizing: border-box;
+
+} 
+
+.buttonTrocarDeTela {
+  font-size: 10px;
+  width: 100px;
+}
