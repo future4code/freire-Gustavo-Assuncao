@@ -66,8 +66,6 @@ export default class TelaCadastro extends React.Component {
                     id='buttonCriarUsuario'
                     onClick={this.fazerCadastro}
                     >Cadastrar</button>
-
-
                 </div>
             </div>
         )
