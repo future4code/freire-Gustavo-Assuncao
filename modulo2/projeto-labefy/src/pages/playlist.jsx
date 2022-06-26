@@ -5,8 +5,7 @@ export default class Playlist extends React.Component {
  
 
     render () {
-        
-
+    
         return (
             <div>
                 <ExibirPlaylist/>

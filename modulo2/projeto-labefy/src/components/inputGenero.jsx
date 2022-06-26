@@ -23,7 +23,7 @@ export default class InputGenero extends React.Component {
             }
         }).then((res)=> {
             alert('Playlist cadastrada com sucesso!')
-            this.setState({genero:''})
+            this.setState({genero:""})
         })
         .catch((error)=> {
             alert(error.response.data.message)

@@ -3,76 +3,64 @@ import axios from "axios";
 import styled from "styled-components";
 
 
-// const CardUsuario = styled.div`
-//       color: green;
-//        padding: 10px;
-//        width: 300px;
-//        display:flex;
-//        justify-content: space-between;
-//        `
+const CardUsuario = styled.div`
+      color: green;
+       `
 
 export default class ExibirPlaylist extends React.Component {
-    state={
-        list: [
-            {
-                id: "",
-                genero: ""
-            }
-        ]
+    state = {
+        playlist: []
     }
+
     componentDidMount() {
-        this.atualizarList()
-      }
-    //   componentDidMount() {
-    //     this.atualizarId()
-    //   }
-    //   componentDidMount() {
-    //     this.atualizarGenero()
-    //   }
-    atualizarList = () => {
-        const novaList = [...this.state.list, ""];
-        this.setState({ list: novaList })
+        this.getPlaylists()
     }
 
-    // atualizarId = (event) => {
-    //     this.setState({ id: event.target.value })
-    // }
-
-    // atualizarGenero = (event) => {
-    //     this.setState({ genero: event.target.value })
-    // }
-    mostrarPlaylist = () => {
+    getPlaylists = () => {
         const url = 'https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists'
-        const body = {
-            list: [
-                {
-                    id: this.state.id,
-                    name: this.state.genero
-                }
-            ]
-        };
-        axios.get(url,body, {
+
+        axios.get(url, {
             headers: {
                 Authorization: "Gustavo-Monteiro-Freire"
             }
-        }).then((res)=>{
-            this.setState({ list: res.data })
+        }).then((res) => {
+            this.setState({ playlist: res.data.result.list });
         })
-        .catch((error)=>{
-            console.log(error.response.data)
-        })
+            .catch((error) => {
+                console.log(error.message);
+            })
     }
 
-    render () {
-        const listaUsuarios = this.state.list.map((play) => {
-          return <li key={play.id}>{play.genero}</li>
+
+
+    deletePlaylist = () => {
+        const url = `https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/:playlistid`
+
+        axios.del(url, {
+            headers: {
+                Authorization: "Gustavo-Monteiro-Freire"
+            }
+        }).then((resp) => {
+            this.setState({ playlist: "" });
+        })
+            .catch((err) => {
+                console.log(err.message);
+            })
+    }
+
+    render() {
+        const listaUsuarios = this.state.playlist.map((playlist) => {
+            return <p key={playlist.id}>{playlist.name}</p>;
         })
         return (
             <div>
-                <p>OIIIII</p>
-                <ul>{listaUsuarios}</ul>
+                <CardUsuario>
+                    <h3>Gêneros Salvos</h3>
+                    <ul>{listaUsuarios}</ul>
+                    <button onClick={this.deletePlaylist} >x</button>
+                </CardUsuario>
             </div>
-        
+
         )
     }
 }
