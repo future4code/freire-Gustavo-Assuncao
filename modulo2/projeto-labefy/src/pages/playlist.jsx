@@ -1,5 +1,5 @@
 import React from "react";
-
+import ExibirPlaylist from "../components/exibirplaylist";
 
 export default class Playlist extends React.Component {
  
@@ -9,7 +9,7 @@ export default class Playlist extends React.Component {
 
         return (
             <div>
-                oiiiii
+                <ExibirPlaylist/>
             </div>
         
         )
