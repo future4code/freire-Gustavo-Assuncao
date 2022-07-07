@@ -1,14 +1,16 @@
-import styled from "styled-components";
+import {createGlobalStyle} from 'styled-components'
 
-export const ContainerApp = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 27vw;
-    height: 85vh;
-    position: fixed;
-    margin: 6vh  35vw;
-    border-radius: 40px;
-    background-color: #5F9EA0;
-     /* background-color: #CD5C5C; */
-    box-shadow: rgb(0 0 0 / 50%) 0px 0px 8px;
-`;
+
+ const GlobalStyle = createGlobalStyle`
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+  body {
+    margin: 0;
+    background-color: #D0D0D0;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+`
+export default GlobalStyle;

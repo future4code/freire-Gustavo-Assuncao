@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
-export const BottonsStyled = styled.div`
-   display: flex; 
-   position: relative;
-   justify-content: space-evenly; 
-   align-items: center;
-   margin-top: 1rem ;
-   
-    Button {
-        background-color: white; 
-        height: 5vh; 
-    }
-`;
+// export const BottonsStyled = styled.div`
+
+// `;
+
+export const BottonsStyled = styled.img`
+    display: flex; 
+    margin-left: -130px; 
+	height: 6vh;
+    position: fixed;
+	transform: translateX(500%);
+    margin-top: 20px; 
+
+`

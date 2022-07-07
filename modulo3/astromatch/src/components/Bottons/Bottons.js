@@ -1,14 +1,14 @@
 import React from "react";
 import * as C from './BottonsStyles'
+import like from '../../assets/like.png'
+import deslike from '../../assets/deslike.png'
 
 const Bottons = () => {
 
   return (
     <div>
-        <C.BottonsStyled>
-        <button>Descurtir</button>
-        <button>Curtir</button>
-        </C.BottonsStyled>
+        <C.BottonsStyled src={like} onClick={() => console.log('Click')}></C.BottonsStyled>
+        <C.BottonsStyled src={deslike} onClick={() => console.log("clicou")}></C.BottonsStyled>
     </div>
   )
 } 
