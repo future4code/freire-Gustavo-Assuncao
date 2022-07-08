@@ -1,18 +1,31 @@
 import styled from "styled-components";
 
-export const HeaderStyled = styled.div`
-    display: flex;
-    flex-direction: column;
-    height: 11vh;
-    position: relative;
-    border-radius: 40px;
-    box-shadow: rgb(0 0 0 / 30%) 0px 0px 50px;
-    border-bottom-right-radius: 0px;
-    border-bottom-left-radius: 0px;
+export const TextMainScreenStyled = styled.div`
 
-    h2{
-        color: white;
-        align-self: center;
-        align-items: center;
-    }
-`;
+        h3 {
+                margin-top: 308px; 
+                color: white; 
+                position:relative ;
+                margin-left: 50px; 
+                
+
+        }
+        p {
+                display: flex;
+                align-items: center; 
+                flex-direction: column;
+                color: white; 
+                margin-left: 20px; 
+                margin-right: 20px; 
+                position:relative ;
+                font-weight: 500px;
+        }
+
+        img { 
+        display: flex;
+        margin-top: 0px;
+        height: 400px;
+        width: 350px;
+        position:fixed;
+        }        
+        `
