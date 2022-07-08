@@ -1,71 +1,70 @@
-import { useState, useEffect } from "react";
-// import Swal from "sweetalert2";
-import axios from "axios";
-import * as C from './HomeStyles'
-// import Load from '../Load/Load';
+import React, {useState, useEffect} from 'react'
+import styled from 'styled-components' 
+import axios from "axios"
+
+import { AppContainer } from './style';
+import { Buttons } from './style';
+import { Elements } from './style';
+import { MenuBar } from './style';
+import { Profile } from './style';
+import Couple from "../../img/incendio.png";
+import Reject from "../../img/reject2.png"
+import Hart from "../../img/hart1.png"
+import { Picture } from './style';
+import Clean from '../../img/reload.png'
+
+function Menu(props) {
+
+    const [ProfilesList, setProfilesList] = useState([]);
+    const [MatcheProfile, setMatcheProfile] = useState([]);
+
+    useEffect(() =>{
+        axios
+            .get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/brenno-boechat/person")
+            .then((res) =>{
+                console.log(res.data.profile)
+                setProfilesList(res.data.profile)
+            })
+            .catch((err) =>{
+                console.log(err)
+            })
+    },[MatcheProfile])
 
 
+    const choosePerson = (idProfile, choiceProfile) =>{
 
-const Home = () => {
-  const [profile, setProfile] = useState([]);
-  const [stopLoading, setStopLoading] = useState(false);
-
-  useEffect(() => {
-      getProfile();
-    ;
-  }, []);
-
-  useEffect(() => {}, [profile]);
-
-  const getProfile = () => {
-    setRemoveLoading(false);
-    axios
-      .get(
-        "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/gustavo/person"
-      )
-      .then((res) => {
-        setPessoa(res.data.profile);
-        setRemoveLoading(true);
-        console.log(res.data.profile);
-      })
-      .catch((error) => {
-        console.log("error", error.response || []);
-      });
-  };
-
-  const ChoosePerson = () => {
-    setRemoveLoading(false);
-    const body = { id: pessoa.id, choice: true };
-
-    axios
-      .post(
-        "https://us-central1-missao-newton.cloudfunctions.net/astroMatch/igor/choose-person",
-        body
-      )
-      .then((res) => {
-        getProfileToChoose();
-        console.log(res.data.isMatch);
-        if (res.data.isMatch === true) {
-          Swal.fire({
-            title: "Match!!",
-            text: `Você deu match com ${pessoa.name} .`,
-            imageUrl: `${pessoa.photo}`,
-            imageWidth: 200,
-            imageHeight: 200,
-          });
+        const body ={
+            "id": idProfile,
+            "choice": choiceProfile
         }
-      })
-      .catch((error) => {
-        alert(error.response);
-      });
-  };
 
+        axios
+        .post("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/brenno-boechat/choose-person", body)
+        .then((res)=>{
+            console.log(res)
+            setMatcheProfile(res.data)
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    }
+
+    const cleanList = () =>{
+        axios
+        .put("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/brenno-boechat/clear")
+        .then((res)=>{
+            console.log(res)
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    }
 
 
   return (
     <div>
       <C.ContainerHome>
-
+     
       </C.ContainerHome>
     </div>
   );
