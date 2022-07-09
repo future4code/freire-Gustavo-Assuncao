@@ -7,15 +7,15 @@ export const ListContainer = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 25px;
-    background-color: white;
+    border-radius: 40px;
+    background-color: #5F9EA0;
     box-shadow: rgb(0 0 0 / 6%) 0px 0px 5px;
     overflow: auto;
 `
 
 export const ListMenuBar = styled.div`
     height: 55px;
-    border-bottom: 1px solid lightgray;
+    border-bottom: 1px solid black;
     display: flex;
     -webkit-box-pack: justify;
     justify-content: space-between;
@@ -25,8 +25,8 @@ export const ListMenuBar = styled.div`
     padding: 0px 10px;
     flex-shrink: 0;
 
-    h1{
-        color:  black;
+    h2{
+        color:  white;
         margin: 0 auto;
     }
 
@@ -56,9 +56,8 @@ export const List = styled.ul`
     transition: all 0.2s ease 0s;
     cursor: pointer;
     right: 25px;
-    border-radius: 20px;
-    background-color: #EFEFF4;
     }
+
     img{
         width: 50px;
         height: 50px;
@@ -66,6 +65,7 @@ export const List = styled.ul`
     }
     p{
         margin-left: 15px;
+        color: white;
         font: bold;
     }
 `

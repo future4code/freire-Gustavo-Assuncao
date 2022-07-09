@@ -8,20 +8,20 @@ import clean from "../../assets/clean.png"
 
 function Home(props) {
 
-    const [ProfilesList, setProfilesList] = useState([]);
-    const [MatcheProfile, setMatcheProfile] = useState([]);
+    const [profiles, setProfiles] = useState([]);
+    const [matches, setMatches] = useState([]);
 
     useEffect(() =>{
         axios
-            .get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/brenno-boechat/person")
+            .get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/gustavo/person")
             .then((res) =>{
                 console.log(res.data.profile)
-                setProfilesList(res.data.profile)
+                setProfiles(res.data.profile)
             })
             .catch((err) =>{
-                console.log(err)
+                console.log(err.message)
             })
-    },[MatcheProfile])
+    },[matches])
 
 
     const choosePerson = (idProfile, choiceProfile) =>{
@@ -30,21 +30,20 @@ function Home(props) {
             "id": idProfile,
             "choice": choiceProfile
         }
-
         axios
-        .post("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/brenno-boechat/choose-person", body)
+        .post("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/gustavo/choose-person", body)
         .then((res)=>{
             console.log(res)
-            setMatcheProfile(res.data)
+            setMatches(res.data)
         })
         .catch((err)=>{
-            console.log(err)
+            console.log(err.message)
         })
     }
 
     const cleanList = () =>{
         axios
-        .put("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/brenno-boechat/clear")
+        .put("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/gustavo/clear")
         .then((res)=>{
             console.log(res)
         })
@@ -59,24 +58,24 @@ function Home(props) {
     <C.MenuBar>
         <button onClick={()=>cleanList()}><img src={clean} height ="35" width="35"></img></button>
         <h2>Astromatch</h2>
-        <button onClick={props.goToList}><img src={contact} height ="35" width="35"></img></button>
+        <button onClick={props.goToMatches}><img src={contact} height ="45" width="45"></img></button>
     </C.MenuBar>
-    {ProfilesList === null ? (
+    {profiles === null ? (
         
         <h1>Nada foi encontrado!</h1>
     ):(
         <C.Elements>
         
         <C.Picture>
-            <img src={ProfilesList.photo}/>
+            <img src={profiles.photo}/>
         </C.Picture>
     <C.Profile>
-        <h2>🟢{ProfilesList.name}, {ProfilesList.age}</h2>
-        <p>{ProfilesList.bio}</p>
+        <h2>🟢{profiles.name}, {profiles.age}</h2>
+        <p>{profiles.bio}</p>
     </C.Profile>
         <C.Buttons>
-            <button onClick={()=>choosePerson(ProfilesList.id, false)}> <img src={reject} height ="30" width="30"></img></button>
-            <button onClick={()=>choosePerson(ProfilesList.id, true)}> <img src={heart} height ="30" width="30"></img></button>
+            <button onClick={()=>choosePerson(profiles.id, false)}> <img src={reject} height ="30" width="30"></img></button>
+            <button onClick={()=>choosePerson(profiles.id, true)}> <img src={heart} height ="30" width="30"></img></button>
         </C.Buttons>
 </C.Elements>
     )

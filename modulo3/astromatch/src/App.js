@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
-import Home from './components/Home/Home';
 import GlobalStyle from './Styles'
 import Matches from './components/Matches/Matches';
-
+import Home from './components/Home/Home';
 
 const App = () => {
 
@@ -18,10 +17,10 @@ const App = () => {
 
   const ChooseScreen = () => {
     switch (currentScreen){
-      case "Home":
+      case "home":
         return <Home goToMatches = {goToMatches}/>
-      case "list":
-        return <Matches goToMatches = {goToHome}/>
+      case "matches":
+        return <Matches goToHome = {goToHome}/>
       default:
         return <h1>Erro! Página não encontrada</h1>
     }
@@ -31,7 +30,6 @@ const App = () => {
     <div>
       <GlobalStyle/>
       {ChooseScreen()}
-      <Home />
     </div>
   );
 };
