@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import Home from './components/Home/Home';
 import GlobalStyle from './Styles'
-import axios from "axios"
 import Matches from './components/Matches/Matches';
 
 

@@ -1,13 +1,8 @@
 import React, {useState, useEffect} from 'react'
-import styled from "styled-components";
 import axios from 'axios'
-
-import { List } from './style';
-import { ListContainer } from './style';
-import { ListMenuBar } from './style';
-import Clean from '../../img/reload.png'
-import Back from '../../img/volte.png'
-
+import * as C from './MatchesStyles';
+import clean from '../../assets/clean.png'
+import back from '../../assets/back.png'
 
 function Matches(props) {
 
@@ -27,24 +22,24 @@ function Matches(props) {
 
   const Filter = MatcheList.map((profile)=>{
     return (
-      <List key={profile.id}>
+      <C.List key={profile.id}>
         <li>
           <img src={profile.photo}></img>
           <p>{profile.name}</p>
         </li>
-      </List>
+      </C.List>
     )
   })
 
   return (
-    <ListContainer>
-        <ListMenuBar>
-            <button><img src={Clean} height ="35" width="35"></img></button>
+    <C.ListContainer>
+        <C.ListMenuBar>
+            <button><img src={clean} height ="35" width="35"></img></button>
             <h1>astromatch</h1>
-            <button onClick={props.goToMenu}><img src={Back} height ="35" width="35"></img></button>
-        </ListMenuBar>
+            <button onClick={props.goToMenu}><img src={back} height ="35" width="35"></img></button>
+        </C.ListMenuBar>
         {Filter}
-    </ListContainer>
+    </C.ListContainer>
   )
 }
 

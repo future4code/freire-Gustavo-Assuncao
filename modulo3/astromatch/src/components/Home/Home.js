@@ -1,19 +1,12 @@
 import React, {useState, useEffect} from 'react'
-import styled from 'styled-components' 
 import axios from "axios"
+import * as C from './HomeStyles';
+import contact from "../../assets/contact.png";
+import reject from "../../assets/reject.png"
+import heart from "../../assets/heart.png"
+import clean from "../../assets/clean.png"
 
-import { AppContainer } from './style';
-import { Buttons } from './style';
-import { Elements } from './style';
-import { MenuBar } from './style';
-import { Profile } from './style';
-import Couple from "../../img/incendio.png";
-import Reject from "../../img/reject2.png"
-import Hart from "../../img/hart1.png"
-import { Picture } from './style';
-import Clean from '../../img/reload.png'
-
-function Menu(props) {
+function Home(props) {
 
     const [ProfilesList, setProfilesList] = useState([]);
     const [MatcheProfile, setMatcheProfile] = useState([]);
@@ -62,12 +55,35 @@ function Menu(props) {
 
 
   return (
-    <div>
-      <C.ContainerHome>
-     
-      </C.ContainerHome>
-    </div>
-  );
-};
+    <C.AppContainer>
+    <C.MenuBar>
+        <button onClick={()=>cleanList()}><img src={clean} height ="35" width="35"></img></button>
+        <h2>Astromatch</h2>
+        <button onClick={props.goToList}><img src={contact} height ="35" width="35"></img></button>
+    </C.MenuBar>
+    {ProfilesList === null ? (
+        
+        <h1>Nada foi encontrado!</h1>
+    ):(
+        <C.Elements>
+        
+        <C.Picture>
+            <img src={ProfilesList.photo}/>
+        </C.Picture>
+    <C.Profile>
+        <h2>🟢{ProfilesList.name}, {ProfilesList.age}</h2>
+        <p>{ProfilesList.bio}</p>
+    </C.Profile>
+        <C.Buttons>
+            <button onClick={()=>choosePerson(ProfilesList.id, false)}> <img src={reject} height ="30" width="30"></img></button>
+            <button onClick={()=>choosePerson(ProfilesList.id, true)}> <img src={heart} height ="30" width="30"></img></button>
+        </C.Buttons>
+</C.Elements>
+    )
+}
+</C.AppContainer>
+);
+}
+
 
 export default Home;
