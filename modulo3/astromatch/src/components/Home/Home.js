@@ -33,7 +33,6 @@ function Home(props) {
         axios
         .post("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/gustavo/choose-person", body)
         .then((res)=>{
-            console.log(res)
             setMatches(res.data)
         })
         .catch((err)=>{
@@ -41,14 +40,14 @@ function Home(props) {
         })
     }
 
-    const cleanList = () =>{
+    const clear = () =>{
         axios
         .put("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/gustavo/clear")
         .then((res)=>{
             console.log(res)
         })
         .catch((err)=>{
-            console.log(err)
+            console.log(err.response)
         })
     }
 
@@ -56,7 +55,7 @@ function Home(props) {
   return (
     <C.AppContainer>
     <C.MenuBar>
-        <button onClick={()=>cleanList()}><img src={clean} height ="35" width="35"></img></button>
+        <button onClick={()=>clear()}><img src={clean} height ="35" width="35"></img></button>
         <h2>Astromatch</h2>
         <button onClick={props.goToMatches}><img src={contact} height ="45" width="45"></img></button>
     </C.MenuBar>

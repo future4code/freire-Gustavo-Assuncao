@@ -20,7 +20,7 @@ function Matches(props) {
     })
   },[])
 
-  const Filter = list.map((profile)=>{
+  const maping = list.map((profile)=>{
     return (
       <C.List key={profile.id}>
         <li>
@@ -38,7 +38,7 @@ function Matches(props) {
             <h2>Astromatch</h2>
             <button onClick={props.goToHome}><img src={back} height ="35" width="35"></img></button>
         </C.ListMenuBar>
-        {Filter}
+        {maping}
     </C.ListContainer>
   )
 }
