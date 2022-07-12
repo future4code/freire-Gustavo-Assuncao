@@ -4,8 +4,6 @@ import * as C from './MatchesStyles';
 import clean from '../../assets/clean.png'
 import back from '../../assets/back.png'
 import Swal from "sweetalert2";
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
 
 function Matches(props) {
 
@@ -21,20 +19,6 @@ function Matches(props) {
       console.log(err)
     })
   },[])
-
-//   const toastEmmitter = () => {
-
-//     toast('Woww deu Match!!🔥🔥', {
-//         position: "top-center",
-//         autoClose: 400,
-//         hideProgressBar: false,
-//         closeOnClick: true,
-//         pauseOnHover: true,
-//         draggable: true,
-//         progress: undefined,
-//         });
-// }
-
 
   const maping = list.map((profile)=>{
     return (
@@ -66,7 +50,6 @@ function Matches(props) {
 
     return (
       <C.ListContainer>
-        {/* <ToastContainer/> */}
           <C.ListMenuBar>
               <button onClick={clear}><img src={clean} height ="35" width="35"></img></button>
               <h2>Astromatch</h2>

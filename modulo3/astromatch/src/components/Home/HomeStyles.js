@@ -7,9 +7,9 @@ export const AppContainer = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border-radius: 40px;
+    border-radius: 40px; 
     background-color: #5F9EA0;
-    box-shadow: rgb(0 0 0 / 6%) 0px 0px 5px;
+    box-shadow: rgb(0 0 0 / 60%) 0px 0px 10px;
 `
 
 export const Elements = styled.div`
@@ -99,7 +99,7 @@ export const Picture = styled.div`
     img{
     width:350px;
     height: 450px;
-    box-shadow: rgb(100 100 100 / 80%) 0px 2px 10px 0px;
+    box-shadow: rgb(100 100 100 / 40%) 0px 2px 10px 1px;
     filter: brightness(70%);
     }
 `

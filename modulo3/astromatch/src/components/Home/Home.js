@@ -18,14 +18,13 @@ function Home(props) {
             .get("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/gustavo/person")
             .then((res) =>{
                 setProfiles(res.data.profile)
-                // toastEmmitter()
             })
             .catch((err) =>{
                 console.log(err.message)
             })
     },[matches])
 
-    const toastEmmitter = () => {
+    const ToastEmmitter = () => {
 
         toast('Woww deu Match!!🔥🔥', {
             position: "top-center",
@@ -49,7 +48,8 @@ function Home(props) {
         .post("https://us-central1-missao-newton.cloudfunctions.net/astroMatch/gustavo/choose-person", body)
         .then((res)=>{
             setMatches(res.data)
-            toastEmmitter()
+            if (res.data.isMatch) { 
+                ToastEmmitter()}
         })
         .catch((err)=>{
             console.log(err.message)
@@ -99,4 +99,4 @@ function Home(props) {
 }
 
 
-export default Home;
+export default Home; 
