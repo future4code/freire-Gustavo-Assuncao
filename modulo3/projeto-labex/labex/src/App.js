@@ -4,9 +4,10 @@ import Router from "./routes/Router"
 import Header from "./components/header/Header";
 
 const App = () =>  {
+
   return (
     <div >
-      <Header />
+      <Header  />
        <Router /> 
        <GlobalStyle />
     </div>

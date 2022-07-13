@@ -9,7 +9,6 @@ import TripDetailsPage from "../pages/TripDetailsPage/TripDetailsPage"
 import CreateTripPage from "../pages/CreateTripPage/CreateTripPage"
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
-
 const Router = () => {
     return (
         

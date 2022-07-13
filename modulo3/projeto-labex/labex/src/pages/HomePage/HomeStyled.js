@@ -36,13 +36,14 @@ export const ButtonsHome = styled.div`
     gap: 1vw;
     
     button {
+        box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.3);
         cursor: pointer;
         width: 200px; 
         height: 50px;
         background-color: black; 
         color: white; 
         font-family: 'DM Sans', sans-serif;
-        :hover {
+        &:hover {
             background-color: #FF4500; 
         }
     }
