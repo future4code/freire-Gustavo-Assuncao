@@ -9,4 +9,4 @@ const TripDetailsPage = () =>  {
   );
 }
 
-export default LoginPage;
+export default TripDetailsPage;
