@@ -14,9 +14,9 @@ box-sizing: border-box;
     h1 {
         margin-top: 110px; 
         margin-bottom: -10px;
-        font-size: 45px; 
-        color: #FF4500; 
-    };
+        font-size: 40px; 
+        color: #FF4500;
+    }
 
     p {
         width: 35vw;
@@ -45,10 +45,10 @@ export const ImgContact = styled.div`
     flex-direction: row; 
 
     img {
-        width: 45vw; 
+        width: 30vw; 
         position: initial;
         display: flex;  
-        margin: -450px 0 0 450px; 
+        margin: -350px 0 0 520px; 
         z-index:-1;
     };
 `
@@ -63,8 +63,8 @@ const ContactPage = () =>  {
 
   return (
     <ContactStyled >
-      <h1><strong> CONTACT</strong> US</h1>
-      <p>Ainda está com dúvidas em comprar com a gente? Conheça mais sobre a gente e já realize a sua inscrição que entraremos em contato para tirar todas as dúvidas. </p>
+      <h1>Contato</h1>
+      <p>Ainda está com dúvidas em comprar com a gente? Conheça mais sobre nós e já realize a sua inscrição que entraremos em contato para tirar todas as dúvidas. </p>
       <button onClick={goToAboutUs}>SOBRE NÓS</button>
       <ImgContact>
        <img src={contact} alt='placa com logomarca' width={70} />

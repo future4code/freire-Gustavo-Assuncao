@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const HomeStyled = styled.div`
     box-sizing: border-box;
     flex-direction: row; 
-    box-sizing: border-box;
     margin-top: 5vh;  
     margin-left: 19vw; 
     position:absolute; 
@@ -12,7 +11,7 @@ export const HomeStyled = styled.div`
     h1 {
         margin-bottom: -20px;
         font-size: 40px; 
-        /* color: #FF4500;  */
+        color: #FF4500; 
     };
 
     h3 {

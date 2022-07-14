@@ -1,11 +1,25 @@
 import React from "react";
+import { LoginStyled } from "./LoginPageStyled";
+
 
 const LoginPage = () =>  {
   return (
-    <div >
-       
-      <h3> Testando LoginPage </h3>
-    </div>
+    <LoginStyled >
+      <h1> Login </h1>
+      <h3> Conecte-se para continuar </h3>
+      <p>EMAIL</p>
+      <input 
+        type='text'
+        placeholder="seuemail@labex.com"
+      />
+      <p>PASSWORD</p>
+      <input 
+        type='text'
+        placeholder="********"
+      />
+      <button>Login</button>
+
+    </LoginStyled>
   );
 }
 
