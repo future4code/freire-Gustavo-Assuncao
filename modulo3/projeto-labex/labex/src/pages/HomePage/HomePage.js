@@ -14,6 +14,7 @@ const HomePage = () =>  {
       navigate('/login')
     }
 
+
   return (
     <HomeStyled >
       <h1> LabeX </h1>
@@ -26,7 +27,6 @@ const HomePage = () =>  {
     <ImgHome>
       <img src={hello} alt='astronalta cumprimentando' />
     </ImgHome>
-    <goToHome/>
     </HomeStyled>
   );
 }

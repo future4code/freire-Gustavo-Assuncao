@@ -2,13 +2,12 @@ import React from "react";
 import { HeaderStyles, ButtonHeader } from "./HeaderStyled";
 import logomarca from "../../assets/logomarca.png"
 import { useNavigate } from 'react-router-dom'
-import HomePage from "../../pages/HomePage/HomePage";
 
 
 const Header = () =>  {
   const navigate = useNavigate()
 
- const goToHome = () => {
+    const goToHome = () => {
       navigate('/')
     }
 

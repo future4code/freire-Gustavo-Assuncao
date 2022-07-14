@@ -43,6 +43,7 @@ export const ImgContact = styled.div`
     box-sizing: border-box; 
     display: flex; 
     flex-direction: row; 
+    
 
     img {
         width: 30vw; 

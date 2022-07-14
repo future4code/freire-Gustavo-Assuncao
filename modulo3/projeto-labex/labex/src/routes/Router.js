@@ -14,13 +14,13 @@ import ContactPage from "../pages/ContactPage/ContactPage";
 
 const Router = () => {
     return (
-        <>
+ 
         <BrowserRouter>
         <Header/>
             <Routes>
                 <Route index element = {< HomePage />}  />
                 <Route path="/aboutUs" element = {<AboutPage />}  />
-                <Route path="/contactUs" element = {<ContactPage />}  />
+                <Route path="/contactus" element = {<ContactPage />}  />
                 <Route path="/trips/list" element = {< ListTripsPage />}  />
                 <Route path="/trips/application" element = {<ApplicationFormPage />}  />
                 <Route path="/login" element = {<LoginPage />}  />
@@ -30,7 +30,6 @@ const Router = () => {
                 <Route path="*" element = {<ErrorPage />}  />
             </Routes>
         </BrowserRouter>
-        </>
     )
 }
 
