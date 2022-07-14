@@ -8,13 +8,19 @@ import AdminHomePage from "../pages/AdminHomePage/AdminHomePage"
 import TripDetailsPage from "../pages/TripDetailsPage/TripDetailsPage"
 import CreateTripPage from "../pages/CreateTripPage/CreateTripPage"
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
+import Header from "../components/header/Header";
+import AboutPage from "../pages/AboutPage/AboutPage";
+import ContactPage from "../pages/ContactPage/ContactPage";
 
 const Router = () => {
     return (
-        
+        <>
         <BrowserRouter>
+        <Header/>
             <Routes>
                 <Route index element = {< HomePage />}  />
+                <Route path="/aboutUs" element = {<AboutPage />}  />
+                <Route path="/contactUs" element = {<ContactPage />}  />
                 <Route path="/trips/list" element = {< ListTripsPage />}  />
                 <Route path="/trips/application" element = {<ApplicationFormPage />}  />
                 <Route path="/login" element = {<LoginPage />}  />
@@ -24,6 +30,7 @@ const Router = () => {
                 <Route path="*" element = {<ErrorPage />}  />
             </Routes>
         </BrowserRouter>
+        </>
     )
 }
 

@@ -12,6 +12,7 @@ export const HomeStyled = styled.div`
     h1 {
         margin-bottom: -20px;
         font-size: 40px; 
+        /* color: #FF4500;  */
     };
 
     h3 {
