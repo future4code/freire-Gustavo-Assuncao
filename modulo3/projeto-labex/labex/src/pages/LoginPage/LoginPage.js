@@ -3,6 +3,7 @@ import { LoginStyled } from "./LoginPageStyled";
 import {useState} from "react";
 import axios from "axios";
 import { useNavigate } from 'react-router-dom'
+import {goToAdminHomePage} from '../../routes/Coordinator'
 
 const LoginPage = () =>  {
   const navigate = useNavigate()
@@ -29,7 +30,7 @@ const LoginPage = () =>  {
     // aqui para pegar somente o token
     console.log('Deu certo:', resp.data.token)
     localStorage.setItem('token', resp.data.token)
-    navigate('/')
+    goToAdminHomePage(navigate)
   }).catch((error)=>{
     console.log('Deu errado:',error.message)
   })
