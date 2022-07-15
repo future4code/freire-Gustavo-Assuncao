@@ -2,9 +2,12 @@ import React from "react";
 import { LoginStyled } from "./LoginPageStyled";
 import {useState} from "react";
 import axios from "axios";
+import { useNavigate } from 'react-router-dom'
 
 
 const LoginPage = () =>  {
+  const navigate = useNavigate()
+  
   const [email, setEmail] = useState(""); 
   const [password, setPassword] = useState("");
 
@@ -24,9 +27,12 @@ const LoginPage = () =>  {
     }
     axios.post ('https://us-central1-labenu-apis.cloudfunctions.net/labeX/gustavo/login', body)
   .then((resp)=>{
-    console.log('Deu certo:', resp.data)
+    // aqui para pegar somente o token
+    console.log('Deu certo:', resp.data.token)
+    localStorage.setItem('token', resp.data.token)
+    navigate('/')
   }).catch((error)=>{
-    console.log('Deu errado:',error.resp)
+    console.log('Deu errado:',error.message)
   })
   };
 
