@@ -1,11 +1,15 @@
 import React from "react";
 import { useEffect } from "react";
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
+import useProtectedPage from '../../hooks/useProtectedPage'
 
 
-const TripDetailsPage = (id) =>  {
- 
-  useEffect(()=>{
+const TripDetailsPage = () =>  {
+  const navigate = useNavigate()
+  useProtectedPage()
+
+  useEffect((id)=>{
     const token = localStorage.getItem("token")
     axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/gustavo/trip/${id}`, {
       headers: {
@@ -18,7 +22,7 @@ const TripDetailsPage = (id) =>  {
     }).catch((error) => {
       console.log('Deu erro: ',error.message)
     })
-  }, [])
+  }, [navigate])
 
   return (
     <div >
