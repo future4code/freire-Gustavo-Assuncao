@@ -18,9 +18,9 @@ const LoginPage = () =>  {
 
   return (
     <LoginStyled >
-    <form onSubmit={onClickLogin}>
       <h1> Login </h1>
       <h3> Conecte-se para continuar </h3>
+      <form onSubmit={onClickLogin}>
       <p>EMAIL</p>
       <input 
           placeholder={"seuemail@gmail.com"}

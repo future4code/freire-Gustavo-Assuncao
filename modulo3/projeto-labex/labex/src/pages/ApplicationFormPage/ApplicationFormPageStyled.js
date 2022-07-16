@@ -1,16 +1,70 @@
 import styled from "styled-components"
 
 export const ApplicationScreenContainer = styled.div`
+    box-sizing: border-box; 
+    font-family: 'DM Sans', sans-serif;
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+
+
+    h1 {
+        color: #FF4500; 
+        font-size: 35px;
+        margin-top: 30px; 
+    }
+
+    input { 
+    box-sizing: border-box; 
+    font-family: 'DM Sans', sans-serif;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 500px;
-`
+    width: 35vw;
+    height: 30px;
+    margin-top: 15px; 
+    }
 
+
+
+    select { 
+        box-sizing: border-box; 
+        font-family: 'DM Sans', sans-serif;
+        margin-top: 15px;
+        width: 15vw; 
+    }
+
+
+
+
+`
 export const ButtonsContainer = styled.div`
+        
+        display: flex; 
+        justify-content: center; 
+        gap: 20px; 
+
+button { 
+    font-family: 'DM Sans', sans-serif;
+    box-sizing: border-box;
     display: flex;
-    justify-content: space-around;
-    width: 500px;
-    margin: 10px 0;
+    align-items: center;
+    justify-content: center;  
+    margin: 40px 0;
+    box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.3);
+    cursor: pointer;
+    width: 170px; 
+    height: 40px;
+    background-color: black; 
+    color: white; 
+    font-family: 'DM Sans', sans-serif;
+
+    &:hover {
+    background-color: #FF4500;
+}
+
+}
+
 `

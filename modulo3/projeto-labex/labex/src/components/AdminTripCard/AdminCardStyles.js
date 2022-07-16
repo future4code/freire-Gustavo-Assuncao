@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import { Delete } from "@material-ui/icons"
 
 export const CardContainer = styled.div`
     display: flex;
@@ -16,7 +15,7 @@ export const CardContainer = styled.div`
     }
 `
 
-export const DeleteButton = styled(Delete)`
+export const DeleteButton = styled.div`
     padding: 10px;
     color: slategray;
     &:hover{

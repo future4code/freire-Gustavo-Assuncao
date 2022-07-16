@@ -9,26 +9,13 @@ import AdminTripCard from "../../components/AdminTripCard/AdminTrip"
 
 
 const AdminHomePage = () =>  {
-  const navigate = useNavigate()
   useProtectedPage()
+  const navigate = useNavigate()
+  const [tripsData, getTrips] = useRequestData("/trips", {})
 
-  useEffect(()=>{
-    const token = localStorage.getItem("token")
-    axios.get(`https://us-central1-labenu-apis.cloudfunctions.net/labeX/gustavo/trips`, {
-      headers: {
-        // apaguei o token de autenticação e vou deixar no local storage
-        auth: token
-      }
-    }) 
-    .then((resp) => {
-      console.log(resp.data)
-    }).catch((error) => {
-      console.log('Deu erro: ',error.message)
-    })
-  }, [navigate])
-
-
-
+  const tripsList = tripsData.trips && tripsData.trips.map((trip) => {
+    return <AdminTripCard key={trip.id} name={trip.name} id={trip.id} getTrips={getTrips} />
+})
 
   return (
     <AdminStyled >
@@ -36,7 +23,7 @@ const AdminHomePage = () =>  {
       <ButtonsHome>
       <button onClick={() => goToHomePage(navigate)}>Voltar</button>
       <button onClick={() => goToCreateTripPage(navigate)}>Criar Viagem</button>
-      <button>Logout</button>
+      <button onClick={() => logout(navigate)}>Logout</button>
       </ButtonsHome>
     </AdminStyled>
   );

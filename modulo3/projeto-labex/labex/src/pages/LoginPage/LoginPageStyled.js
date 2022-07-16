@@ -6,7 +6,6 @@ export const LoginStyled = styled.div`
     box-sizing: border-box;
     display: flex; 
     align-items: center;
-    /* justify-content: center; */
     flex-direction: column;
     font-family: 'DM Sans', sans-serif;
     
@@ -35,14 +34,15 @@ export const LoginStyled = styled.div`
         font-size: 14px;
         font-family: 'DM Sans', sans-serif;
         margin-bottom: 2px;
-        display: flex;  
-        align-self: stretch; 
-        margin-left: 39%;
-        
     };
 
     button {
         margin-top: 40px; 
+        margin-left: 50px; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; 
         box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.3);
         cursor: pointer;
         width: 200px; 
@@ -50,15 +50,15 @@ export const LoginStyled = styled.div`
         background-color: black; 
         color: white; 
         font-family: 'DM Sans', sans-serif;
+        font-size: 15px; 
         &:hover {
             background-color: #FF4500; 
         }
       }
+      
 
 `
 
 export const InputStyled = styled.div`
-
-
 
 `
