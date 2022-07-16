@@ -1,7 +1,7 @@
 import React from "react"
 import { CardContainer, DeleteButton } from './AdminCardStyles'
 import { useNavigate } from 'react-router-dom'
-import { goToTripDetailsPage } from '../../routes/coordinator'
+import { goToTripDetailsPage } from '../../routes/Coordinator'
 import { deleteTrip } from '../../services/requests'
 
 

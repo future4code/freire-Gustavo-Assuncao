@@ -5,7 +5,7 @@ import {goToCreateTripPage, goToHomePage} from "../../routes/Coordinator";
 import { logout } from "../../services/requests";
 import {AdminStyled, ButtonsHome} from '../AdminHomePage/AdminHomePageStyled';
 import useRequestData from "../../hooks/useRequestData"
-import AdminTripCard from "../../components/"
+import AdminTripCard from "../../components/AdminTripCard/AdminTrip"
 
 
 const AdminHomePage = () =>  {
