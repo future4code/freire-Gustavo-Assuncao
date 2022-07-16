@@ -1,13 +1,14 @@
 import React from "react";
-import { useEffect } from "react";
-import axios from 'axios'
-import { useNavigate } from 'react-router-dom'
-import useProtectedPage from '../../hooks/useProtectedPage'
-import {goToCreateTripPage, goToHomePage} from "../../routes/Coordinator"
-import {AdminStyled, ButtonsHome} from '../AdminHomePage/AdminHomePageStyled'
+import useProtectedPage from '../../hooks/useProtectedPage';
+import { useNavigate } from 'react-router-dom';
+import {goToCreateTripPage, goToHomePage} from "../../routes/Coordinator";
+import { logout } from "../../services/requests";
+import {AdminStyled, ButtonsHome} from '../AdminHomePage/AdminHomePageStyled';
+import useRequestData from "../../hooks/useRequestData"
+import AdminTripCard from "../../components/"
+
 
 const AdminHomePage = () =>  {
-
   const navigate = useNavigate()
   useProtectedPage()
 

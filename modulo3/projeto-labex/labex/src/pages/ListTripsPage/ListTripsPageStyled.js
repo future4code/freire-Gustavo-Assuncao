@@ -5,7 +5,7 @@ export const ButtonsContainer = styled.div`
     box-sizing: border-box;
     gap: 2vw;
     font-family: 'DM Sans', sans-serif;
-    
+
     button {
         box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.3);
         cursor: pointer;
@@ -18,6 +18,7 @@ export const ButtonsContainer = styled.div`
             background-color: #FF4500; 
         }
     }
+    
     margin: 40px 0 0 0;
 `
 
@@ -39,6 +40,7 @@ export const ConfCard = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr;
 gap: 80px;
+
 
 @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
     display: flex;

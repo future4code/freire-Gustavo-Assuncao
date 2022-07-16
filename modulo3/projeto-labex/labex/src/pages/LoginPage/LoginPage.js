@@ -1,62 +1,46 @@
 import React from "react";
-import { LoginStyled } from "./LoginPageStyled";
-import {useState} from "react";
-import axios from "axios";
+import useForm from "../../hooks/useForm"
+import useUnprotectedPage from '../../hooks/useUnprotectedPage'
+import { login } from "../../services/requests"
 import { useNavigate } from 'react-router-dom'
-import {goToAdminHomePage} from '../../routes/Coordinator'
+import { LoginStyled } from "./LoginPageStyled";
 
 const LoginPage = () =>  {
+  useUnprotectedPage()
   const navigate = useNavigate()
-  
-  const [email, setEmail] = useState(""); 
-  const [password, setPassword] = useState("");
+  const { form, onChange } = useForm({ email: "", password: "" })
 
-  const onChangeEmail = (event) => {
-    setEmail (event.target.value)
-  }
 
-  const onChangePassword = (event) => {
-    setPassword(event.target.value)
-  }
-
-  const onSubmitLogin = (event) => {
-    console.log(email, password)
-    const body = {
-      email: email, 
-      password: password
-    }
-    axios.post ('https://us-central1-labenu-apis.cloudfunctions.net/labeX/gustavo/login', body)
-  .then((resp)=>{
-    // aqui para pegar somente o token
-    console.log('Deu certo:', resp.data.token)
-    localStorage.setItem('token', resp.data.token)
-    goToAdminHomePage(navigate)
-  }).catch((error)=>{
-    console.log('Deu errado:',error.message)
-  })
-  };
+  const onClickLogin = (event) => {
+    event.preventDefault()
+    login(form, navigate)
+}
 
   return (
     <LoginStyled >
+    <form onSubmit={onClickLogin}>
       <h1> Login </h1>
       <h3> Conecte-se para continuar </h3>
       <p>EMAIL</p>
       <input 
-        type='email'
-        placeholder="seuemail@labex.com"
-        value={email}
-        onChange={onChangeEmail}
+          placeholder={"seuemail@gmail.com"}
+          type={"email"}
+          name={"email"}
+          value={form.email}
+          onChange={onChange}
+          required
       />
       <p>PASSWORD</p>
       <input 
-        type='password'
-        placeholder="********"
-        value={password}
-        onChange={onChangePassword}
-
+        placeholder={"********"}
+        type={"password"}
+        name={"password"}
+        value={form.password}
+        onChange={onChange}
+        required
       />
-      <button onClick={onSubmitLogin}>Login</button>
-
+      <button type={"submit"}>Login</button>
+      </form>
     </LoginStyled>
   );
 };

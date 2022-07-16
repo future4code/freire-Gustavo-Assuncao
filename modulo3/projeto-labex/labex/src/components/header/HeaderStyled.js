@@ -11,6 +11,7 @@ background-color: black;
 img { 
     height: 10vh; 
     padding-left: 15vh; 
+    cursor: pointer;
 }
 
 button {

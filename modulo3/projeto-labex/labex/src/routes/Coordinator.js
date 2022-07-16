@@ -6,6 +6,14 @@ export const goBack = (navigate) => {
     navigate(-1)
 }
 
+export const goToAboutUs = (navigate) => {
+    navigate("/AboutUs")
+}
+
+export const goToContactUs = (navigate) => {
+    navigate("/contactUs")
+}
+
 
 export const goToListTripsPage = (navigate) => {
     navigate("/trips/list")
