@@ -7,7 +7,6 @@ import {AdminStyled, ButtonsHome} from '../AdminHomePage/AdminHomePageStyled';
 import useRequestData from "../../hooks/useRequestData"
 import AdminTripCard from "../../components/AdminTripCard/AdminTrip"
 
-
 const AdminHomePage = () =>  {
   useProtectedPage()
   const navigate = useNavigate()
@@ -25,6 +24,7 @@ const AdminHomePage = () =>  {
       <button onClick={() => goToCreateTripPage(navigate)}>Criar Viagem</button>
       <button onClick={() => logout(navigate)}>Logout</button>
       </ButtonsHome>
+      {tripsList && tripsList.length > 0 ? tripsList : <p>Caregando...</p>}
     </AdminStyled>
   );
 }

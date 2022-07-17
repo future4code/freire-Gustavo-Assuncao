@@ -1,6 +1,6 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom'
-import { ButtonsContainer } from "./CreateTripPageStyled"
+import { Title, Create, InputData, ButtonCreate } from "./CreateTripPageStyled"
 import { planets } from '../../constants/planets'
 import { createTrip } from "../../services/requests"
 import { goToAdminHomePage } from '../../routes/Coordinator'
@@ -9,7 +9,6 @@ import useProtectedPage from '../../hooks/useProtectedPage'
 
 
 const CreateTripPage = () =>  {
-  
   useProtectedPage()
   const navigate = useNavigate()
   const { form, onChange, clear } = useForm({ name: "", planet: "", date: "", description: "", durationInDays: "" })
@@ -19,15 +18,15 @@ const CreateTripPage = () =>  {
     createTrip(form, clear)
 }
 
-const today = new Date()
-const stringToday = today.getFullYear() + "-" +
-("0" + (today.getMonth() + 1)).substr(-2) + "-"
-+ ("0" + today.getDate()).substr(-2)
+const today = new Date().toISOString().split("T")[0]
 
   return (
-    <div>
+    <>
+    <Title>
     <h1>Criar Viagem</h1>
+    </Title>
     <form onSubmit={onClickCreate}>
+    <Create>
         <input
             placeholder={"Nome"}
             name={"name"}
@@ -36,27 +35,6 @@ const stringToday = today.getFullYear() + "-" +
             pattern={"^.{5,}$"}
             title={"O nome da viagem deve ter no mínimo 5 caracteres"}
             required
-        />
-        <select
-            placeholder={"Planeta"}
-            name={"planet"}
-            defaultValue={""}
-            onChange={onChange}
-            required
-        >
-            <option value={""} disabled>Escolha um Planeta</option>
-            {planets.map((planet) => {
-                return <option value={planet} key={planet}>{planet}</option>
-            })}
-        </select>
-        <input
-            placeholder={"Data"}
-            type={"date"}
-            name={"date"}
-            value={form.date}
-            onChange={onChange}
-            required
-            min={stringToday}
         />
         <input
             placeholder={"Descrição"}
@@ -76,12 +54,36 @@ const stringToday = today.getFullYear() + "-" +
             required
             min={50}
         />
-        <ButtonsContainer>
+        </Create>
+        <InputData>
+        <select
+            placeholder={"Planeta"}
+            name={"planet"}
+            defaultValue={""}
+            onChange={onChange}
+            required
+        >
+            <option value={""} disabled>Escolha um Planeta</option>
+            {planets.map((planet) => {
+                return <option value={planet} key={planet}>{planet}</option>
+            })}
+        </select>
+        <input
+            placeholder={"Data"}
+            type={"date"}
+            name={"date"}
+            value={form.date}
+            onChange={onChange}
+            required
+            min={today}
+        />
+        </InputData>
+        <ButtonCreate>
             <button onClick={() => goToAdminHomePage(navigate)}>Voltar</button>
             <button type={"submit"}>Criar</button>
-        </ButtonsContainer>
+            </ButtonCreate>
     </form>
-</div>
+    </>
   );
 }
 

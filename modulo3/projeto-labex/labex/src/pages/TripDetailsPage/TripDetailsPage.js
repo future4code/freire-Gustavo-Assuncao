@@ -30,7 +30,7 @@ const TripDetailsPage = () =>  {
         <p><b>Nome:</b> {tripDetails.trip.name}</p>
         <p><b>Descrição:</b> {tripDetails.trip.description}</p>
         <p><b>Planeta:</b> {tripDetails.trip.planet}</p>
-        <p><b>Duração:</b> {tripDetails.trip.durationInDays} dias</p>
+        <p><b>Duração:</b> {tripDetails.trip.durationInDays}</p>
         <p><b>Data:</b> {tripDetails.trip.date}</p>
     </TripDataContainer>}
     <button onClick={() => goToAdminHomePage(navigate)}>Voltar</button>

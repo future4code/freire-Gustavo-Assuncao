@@ -23,17 +23,18 @@ export const ApplicationScreenContainer = styled.div`
     justify-content: center;
     align-items: center;
     width: 35vw;
-    height: 30px;
+    height: 40px;
     margin-top: 15px; 
     }
 
 
 
     select { 
+        height: 40px;
         box-sizing: border-box; 
         font-family: 'DM Sans', sans-serif;
         margin-top: 15px;
-        width: 15vw; 
+        width: 35vw; 
     }
 
 
@@ -56,7 +57,7 @@ button {
     box-shadow: 5px 5px 5px 1px rgba(0,0,0,0.3);
     cursor: pointer;
     width: 170px; 
-    height: 40px;
+    height: 50px;
     background-color: black; 
     color: white; 
     font-family: 'DM Sans', sans-serif;

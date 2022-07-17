@@ -8,20 +8,19 @@ export const CardContainer = styled.div`
     margin: 10px 0;
     align-items: center;
     justify-content: space-between;
-    width: 460px;
+    width: 440px;
     &:hover{
         cursor: pointer;
-        background-color: #b6d4e3;
+        box-shadow: 0 4px 8px 0 #FF4500;
     }
+
 `
 
 export const DeleteButton = styled.div`
     padding: 10px;
     color: slategray;
-    &:hover{
-        cursor: pointer;
-        background-color: #d1e4ed;
-        border-radius: 24px;
-        color: darkred;
-    }
+    background-color: red;
+    border-radius: 25px;
+    color: darkred;
+    cursor: pointer;
 `

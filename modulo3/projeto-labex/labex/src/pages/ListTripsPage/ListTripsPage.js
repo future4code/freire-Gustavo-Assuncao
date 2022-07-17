@@ -1,7 +1,7 @@
 import React from 'react'
 import TripCard from "../../components/TripCard/TripCard"
 import useRequestData from "../../hooks/useRequestData"
-import { goBack, goToApplicationFormPage } from '../../routes/Coordinator'
+import { goToApplicationFormPage, goToHomePage } from '../../routes/Coordinator'
 import { useNavigate } from 'react-router-dom'
 import { ButtonsContainer, ListScreenContainer, ConfCard } from "./ListTripsPageStyled"
 
@@ -16,7 +16,7 @@ const ListTripsPage = () => {
     return (
         <ListScreenContainer>
             <ButtonsContainer>
-                <button onClick={() => goBack(navigate)}>VOLTAR</button>
+                <button onClick={() => goToHomePage(navigate)}>VOLTAR</button>
                 <button onClick={() => goToApplicationFormPage(navigate)}>INSCREVER-SE</button>
             </ButtonsContainer>
             <h1>Lista de Viagens</h1>
