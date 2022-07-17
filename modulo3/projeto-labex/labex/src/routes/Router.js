@@ -14,7 +14,6 @@ import ContactPage from "../pages/ContactPage/ContactPage";
 
 const Router = () => {
     return (
- 
         <BrowserRouter>
         <Header/>
             <Routes>

@@ -28,7 +28,6 @@ export const ApplicationScreenContainer = styled.div`
     }
 
 
-
     select { 
         height: 40px;
         box-sizing: border-box; 
@@ -37,8 +36,21 @@ export const ApplicationScreenContainer = styled.div`
         width: 35vw; 
     }
 
+    @media screen and (min-device-width: 320px) and (max-device-width: 480px) {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    text-align: center;
 
+        input {
+            width: 400px; 
+        }
 
+        select {
+            width: 400px; 
+        }
+
+}
 
 `
 export const ButtonsContainer = styled.div`

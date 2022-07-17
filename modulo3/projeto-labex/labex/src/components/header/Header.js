@@ -9,6 +9,7 @@ const Header = () =>  {
   const navigate = useNavigate()
 
   return (
+    <>
     <HeaderStyles >
       <img src={logomarca} onClick={() => goToHomePage(navigate)} alt='logomarca - astronauta em um foguete'/>
        <ButtonHeader>
@@ -17,6 +18,7 @@ const Header = () =>  {
         <button onClick={() => goToContactUs(navigate)}>CONTATO</button>
         </ButtonHeader> 
     </HeaderStyles>
+    </>
   );
 }
 

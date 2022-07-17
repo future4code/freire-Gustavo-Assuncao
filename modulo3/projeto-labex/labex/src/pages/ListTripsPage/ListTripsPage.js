@@ -20,6 +20,7 @@ const ListTripsPage = () => {
                 <button onClick={() => goToApplicationFormPage(navigate)}>INSCREVER-SE</button>
             </ButtonsContainer>
             <h1>Lista de Viagens</h1>
+            <h3>Ao decidir o seu destino, clique no botão inscreva-se!</h3>
             <ConfCard>
             {tripsList && tripsList.length > 0 ? tripsList : <p>Carregando...</p>}
             </ConfCard>

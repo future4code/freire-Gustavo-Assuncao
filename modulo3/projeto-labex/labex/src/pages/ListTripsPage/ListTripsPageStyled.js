@@ -18,22 +18,30 @@ export const ButtonsContainer = styled.div`
             background-color: #FF4500; 
         }
     }
-    
     margin: 40px 0 0 0;
 `
 
 export const ListScreenContainer = styled.div`
+
     font-family: 'DM Sans', sans-serif;
     display: flex;
     margin: 0 auto; 
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 800px;
+    max-width: 800px;
     h1{
         color: #FF4500; 
         font-size: 40px ; 
     }
+    h3 {
+        margin-top: -20px;
+        margin-bottom: 40px;
+        font-size: 20px ; 
+        font-weight: lighter; 
+    }
+
+   
 
 `
 export const ConfCard = styled.div`
@@ -46,9 +54,7 @@ gap: 80px;
     display: flex;
     flex-direction: column;
     justify-items: center;
-    padding: 10px;
-    margin: 0px 20px;
     text-align: center;
-    padding-bottom: 20px;
+    margin: 0 auto;
   }
 `
