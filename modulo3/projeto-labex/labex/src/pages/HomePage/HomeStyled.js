@@ -7,7 +7,6 @@ export const HomeStyled = styled.div`
     margin-left: 19vw; 
     position:absolute; 
     font-family: 'DM Sans', sans-serif;
-    height: 100vh; 
     
     h1 {
         margin-bottom: -20px;
