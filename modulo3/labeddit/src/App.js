@@ -1,15 +1,18 @@
-import  Router from "./routes/Router";
 import React from "react";
+import Router from "./routes/Router";
+import theme from "./constants/theme";
 import { GlobalStyles } from "./GlobalStyles"
+import { ThemeProvider } from "styled-components";
+
 
 
 
 const App = () => {
   return (
-    <div>
+    <ThemeProvider theme={theme}>
       <GlobalStyles />
       <Router />
-    </div>
+    </ThemeProvider>
   );
 }
 
