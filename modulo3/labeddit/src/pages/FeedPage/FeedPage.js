@@ -1,5 +1,6 @@
 import React from "react";
-import Button from "@material-ui/core/Button"; 
+// import Button from "@material-ui/core/Button"; 
+
 
 
 const FeedPage = () => {
@@ -7,9 +8,9 @@ const FeedPage = () => {
     return (
         <div>
             <h1>FeedPage</h1>
-            <Button variant="contained" color="primary">
+            {/* <Button variant="contained" color="primary" >
             Clique aqui!
-            </Button>
+            </Button> */}
         </div>
     )
 }; 
