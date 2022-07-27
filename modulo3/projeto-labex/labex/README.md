@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# LabeX 
+- Plataforma de gerenciamento de viagens espaciais. A plataforma tem duas partes: uma pública e uma privada (com senha- mais abaixo).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Tecnologias utilizadas 
+- React Js
+- PostMan
+- Styled-Components 
+- Consumo de API 
+- Input de forms controlados 
 
-## Available Scripts
+## Funcionalidades 
+Caso o usuário escolha ver a **Lista de Viagens**, será redirecionado à parte pública (sem login) do site. Na parte **pública** qualquer usuário deverá ser capaz de:
 
-In the project directory, you can run:
+- Ver a lista de viagens existentes
+- Ter acesso a uma página com formulário para se inscrever para uma viagem existente
 
-### `npm start`
+Caso o usuário escolha entrar na Área Administrativa, deverá ser redirecionado para uma página onde pode fazer login. Após fazer o login com uma conta válida, terá acesso à parte privada, onde deverá ser capaz de:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Ver a lista de todas as viagens com a possibilidade de deletá-las
+- Ter acesso a uma página com formulário para criar novas viagens
+- Ver os detalhes de uma viagem e, dentro desta página:
+    - Conseguir ver a lista de candidatos que se aplicaram para essa viagem e ainda estão pendentes
+    - Aprovar ou reprovar os candidatos para a viagem
+    - Ver lista atualizada de candidatos aprovados
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Dados para Login
+admin: pilotgus@gmail.com
+password: 102030
 
-### `npm test`
+## Link do surge
+[labe-travels.surge.sh](url)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Imagens
+![image](https://user-images.githubusercontent.com/104602579/179395986-9d95e61b-3a81-4743-a1d1-8580b91ac64a.png)
+![image](https://user-images.githubusercontent.com/104602579/179396001-93b716e6-d19a-4a9e-932b-6c49939d7e2e.png)
+![image](https://user-images.githubusercontent.com/104602579/179396015-c17be5c6-0c6c-4707-b06b-37386266905a.png)
+![image](https://user-images.githubusercontent.com/104602579/179396046-518ab17e-208e-4269-8fd3-ca740035400b.png)
+![image](https://user-images.githubusercontent.com/104602579/179396060-45f3bd7b-9c06-4428-955b-5ffc53b90f73.png)
+![image](https://user-images.githubusercontent.com/104602579/179396064-72ffa25e-ee81-483d-818a-09f9619635de.png)
+![image](https://user-images.githubusercontent.com/104602579/179396074-47d24f93-fc86-4d2c-94ea-898fcd11c410.png)
+![image](https://user-images.githubusercontent.com/104602579/179396082-83fed93b-7282-47fb-9ace-97396eb84aa2.png)
+![image](https://user-images.githubusercontent.com/104602579/179396100-2ed110c0-6c01-42b5-960f-fbc0ff8eea19.png)
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
