@@ -5,14 +5,16 @@ import useForm from "../../hooks/useForm"
 import Button from "@material-ui/core/Button"; 
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
+import { useNavigate } from "react-router-dom"
+import { signUp } from "../../services/users";
 
 const SignUpForm = () => {
-    const [form, onChange, clear] = useForm({ name: "", email: "", password: "" })
-
+    const [form, onChange, clear] = useForm({ username: "", email: "", password: "" })
+    const navigate = useNavigate ()
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-        console.log(form)
+        signUp(form, clear, navigate)
     }
 
     return (
@@ -20,10 +22,10 @@ const SignUpForm = () => {
                 <SignUpFormContainer>
                 <InputsContainer>
                 <TextField 
-                        name={"name"}
-                        value= {form.name}
+                        name={"username"}
+                        value= {form.username}
                         onChange={onChange}
-                        label={"Name"}
+                        label={"Username"}
                         variant={"outlined"}
                         margin={"normal"}
                         fullWidth
@@ -52,7 +54,6 @@ const SignUpForm = () => {
                         fullWidth
                         required
                         type={"password"}
-
                     />
                     <p>Ao continuar, você concorda com o nosso Contrato de usuário e nossa Política de Privacidade*</p>
                     <FormControlLabel
@@ -69,8 +70,6 @@ const SignUpForm = () => {
                     </InputsContainer>
                     </SignUpFormContainer>
                 </form>
-
-           
     )
 }; 
 

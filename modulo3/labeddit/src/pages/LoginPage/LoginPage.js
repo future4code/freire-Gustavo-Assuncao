@@ -6,8 +6,10 @@ import Button from "@material-ui/core/Button";
 import LoginForm from "./LoginForm";
 import {goToSignUpPage} from "../../routes/coordinator"
 import { useNavigate } from "react-router-dom"
+import useUnprotectedPage from "../../hooks/useProtectedPage"
 
 const LoginPage = () => {
+    useUnprotectedPage()
     const navigate = useNavigate()
 
     return (

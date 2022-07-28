@@ -7,11 +7,26 @@ import { useNavigate } from "react-router-dom"
 
 const Header = () => {
     const navigate = useNavigate()
+    const token = localStorage.getItem("token")
+
+    const logout = () => {
+      localStorage.removeItem("token")
+    }
+
+    const rightButtonAction = () => {
+      if (token){
+        logout()
+        goToLoginPage(navigate) 
+      } else { 
+        goToLoginPage(navigate) 
+      }
+    }
+
   return (
       <AppBar position="static">
         <StyledToolBar>
-          <Button onClick={() => goToFeedPage(navigate)} color="inherit">LabEddit</Button>
-          <Button onClick={() => goToLoginPage(navigate)} color="inherit">Login</Button>
+            <Button onClick={() => goToFeedPage(navigate)} color="inherit">LabEddit</Button>
+            <Button onClick={rightButtonAction} color="inherit">{token && token ? "Logout" : "Login"}</Button>
         </StyledToolBar>
       </AppBar>
   );
