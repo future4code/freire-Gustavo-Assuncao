@@ -1,25 +1,24 @@
 import React from "react";
-import { InputsContainer } from "./LoginStyles"
+import { InputsContainer, LoginFormContainer } from "./LoginStyles"
 import TextField from "@material-ui/core/TextField";
+import Button from "@material-ui/core/Button";
 import useForm from "../../hooks/useForm"
-import Button from "@material-ui/core/Button"; 
+import {login}  from "../../services/users" 
 
 
 const LoginForm = () => {
     const [form, onChange, clear] = useForm({ email: "", password: "" })
-    // const [isLoading, setIsLoading] = useState(false)
-
 
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-        // login(form, clear, history, setRightButtonText, setIsLoading)
-
+        login(form, clear)
     }
 
     return (
-            <InputsContainer>
+        <LoginFormContainer>
                 <form onSubmit={onSubmitForm}>
+                <InputsContainer>
                     <TextField 
                         name={"email"}
                         value= {form.email}
@@ -27,9 +26,10 @@ const LoginForm = () => {
                         label={"E-mail"}
                         variant={"outlined"}
                         margin={"normal"}
+                        type={"email"}
                         fullWidth
                         required
-                        type={"email"}
+                        autoFocus
                     />
                     <TextField 
                         name={"password"}
@@ -49,8 +49,9 @@ const LoginForm = () => {
                     color={"primary"}
                     fullWidth
                     > Fazer Login </Button>
+                    </InputsContainer>
                 </form>
-            </InputsContainer>
+            </LoginFormContainer>
            
     )
 }; 
