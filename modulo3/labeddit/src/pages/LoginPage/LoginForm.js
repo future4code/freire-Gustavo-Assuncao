@@ -5,12 +5,16 @@ import useForm from "../../hooks/useForm"
 import Button from "@material-ui/core/Button"; 
 
 
-
 const LoginForm = () => {
     const [form, onChange, clear] = useForm({ email: "", password: "" })
-        
+    // const [isLoading, setIsLoading] = useState(false)
+
+
+
     const onSubmitForm = (event) => {
         event.preventDefault()
+        // login(form, clear, history, setRightButtonText, setIsLoading)
+
     }
 
     return (
@@ -43,10 +47,8 @@ const LoginForm = () => {
                     type={"submit"}
                     variant={"contained"}
                     color={"primary"}
-                    margin={"normal"}
                     fullWidth
-                    >
-                    Fazer Login </Button>
+                    > Fazer Login </Button>
                 </form>
             </InputsContainer>
            

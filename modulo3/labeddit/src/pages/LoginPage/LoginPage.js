@@ -1,33 +1,30 @@
 import React from "react";
-import { ScreenContainer, LogoImage, InputsContainer, SignUpButtonContainer,} from "./LoginStyles"
+import { ScreenContainer, LogoImage, SignUpButtonContainer} from "./LoginStyles"
 import labelogo from "../../assets/labelogo.png"
-import TextField from "@material-ui/core/TextField";
 import useForm from "../../hooks/useForm"
 import Button from "@material-ui/core/Button"; 
 import LoginForm from "./LoginForm";
-
+import {goToSignUpPage} from "../../routes/coordinator"
+import { useNavigate } from "react-router-dom"
 
 const LoginPage = () => {
-    const [form, onChange, clear] = useForm({ email: "", password: "" })
-        
-    const onSubmitForm = (event) => {
-        event.preventDefault()
-    }
+    const navigate = useNavigate()
 
     return (
         <ScreenContainer>
             <LogoImage src={labelogo}/>
             <LoginForm />
             <SignUpButtonContainer>
-            <Button 
+                <Button 
+                    onClick={()=> goToSignUpPage(navigate)}
                     type={"submit"}
                     variant={"text"}
-                    color={"primary"}
+                    color={"secondary"}
                     margin={"normal"}
                     fullWidth
                     >
                     Não possui conta? Cadastre-se 
-                    </Button>
+                </Button>
             </SignUpButtonContainer>
         </ScreenContainer>
     )
