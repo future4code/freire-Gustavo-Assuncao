@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import useProtectedPage from "../../hooks/useProtectedPage"
 import { BASE_URL } from "../../constants/urls"
 import useRequestData from "../../hooks/useRequestData"
@@ -8,12 +8,25 @@ import ThumbUpOutlinedIcon from '@material-ui/icons/ThumbUpOutlined';
 import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
 
 const FeedPage = () => {
-    const posts = useRequestData([], `${BASE_URL}/posts`) 
-    console.log(posts)
-    useProtectedPage()
+    useProtectedPage() 
+    const [pagination, setPagination] = useState(0);
+    const limitPage = 20;
+    const posts = useRequestData([], `${BASE_URL}/posts/?page=${pagination}&size=${limitPage}`) 
+    
+    const beforeClick = () => {
+        if (pagination > 0) {
+            setPagination(pagination-1)
+        }
+    };
 
-    //está chegando em objetos no console objetos e estou mapeando 
-    // para array de components
+    const afterClick = () => {
+        if (pagination + 1 < 20) {
+            setPagination(pagination + 1);
+        }
+      };
+   
+
+
     const postsCards = posts.map((item)=> {
         return (
         <PostContainer key={item.id}> 
@@ -30,15 +43,15 @@ const FeedPage = () => {
         </PostContainer>
         )
     })  
-       
-    // title={item.title} 
-    // 
-    // createdAt={item.createdAt}
-    // userId={item.userId}
+
     return (
+        <>
         <CardContainer>
             {postsCards}
         </CardContainer>
+        <button onClick={() => beforeClick()}>Anterior</button>
+        <button onClick={() => afterClick()}>Proxima</button>
+        </>
     )
 }; 
 

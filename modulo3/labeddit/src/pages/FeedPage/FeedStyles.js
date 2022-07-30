@@ -1,6 +1,18 @@
 import styled from "styled-components";
 
 
+//criarPosts
+
+
+
+
+
+
+
+
+
+
+//posts
 export const CardContainer = styled.div`
     display: flex;
     flex-direction: column;
@@ -15,10 +27,9 @@ export const PostContainer = styled.div`
     flex-direction: column;
     align-items: flex-start;
     padding: 5px 5px;
-
-    width: 85%;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+    width: 70%;
     height: auto;
-
     background: #FBFBFB;
     border: 1px solid #b2dfdb;
     border-radius: 12px;
@@ -26,15 +37,16 @@ export const PostContainer = styled.div`
     p {
         font-size: 10px;
         color: gray;
+        margin-left: 5px; 
     }
 
     h3 {
         font-weight: lighter;
         width: 80%; 
         word-wrap: break-word;
+        color: #111111; 
+        margin-left: 5px; 
     }
-
-
 `
 
 export const RoundedBox = styled.div`
@@ -47,15 +59,18 @@ export const RoundedBox = styled.div`
     height: 20px;
     padding: 1px 15px;
   
-p { 
-    margin-left: 2px;
-}
-  svg {
-    height: 10px; 
+    p { 
+    margin-left: 5px;
+    font-size: 15px; 
+    }
+
+    svg {
+    height: 17px; 
     align-items: center;
     justify-content: center;
     color: grey; 
     margin-right: -5px; 
+    cursor: pointer; 
   }
 
 `
