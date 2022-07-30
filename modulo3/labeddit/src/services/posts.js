@@ -14,3 +14,17 @@ import { BASE_URL } from "../constants/urls"
         })
             .catch((err) => console.log(err.response.message))
     }
+
+
+    
+//    export const createPost = (body, clear) => {
+//     axios.post(`${BASE_URL}/posts`, body,{
+//         headers: {
+//             Authorization: localStorage.getItem("token")
+//         }
+//     }).then((res) =>{
+//         alert(res.data.message)
+//         clear()
+//     })
+//         .catch((err) => console.log(err.response.message))
+// }

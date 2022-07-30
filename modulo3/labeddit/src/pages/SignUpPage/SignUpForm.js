@@ -64,7 +64,7 @@ const SignUpForm = () => {
                     <Button 
                     type={"submit"}
                     variant={"contained"}
-                    color={"primary"}
+                    color={"secondary"}
                     fullWidth
                     > Fazer Cadastro </Button>
                     </InputsContainer>

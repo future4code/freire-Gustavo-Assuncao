@@ -117,5 +117,17 @@ export const ContainerTitle = styled.div`
     box-sizing: border-box; 
   }
 
+`
+
+export const ButtonsContainer = styled.div`
+
+  display: flex;
+  align-items: center;
+  justify-content: center;  
+  margin: 30px auto; 
+  
+  button {
+    margin-left: 15px; 
+  }
 
 `

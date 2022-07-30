@@ -19,7 +19,6 @@ export const InputsContainer = styled.div`
     width: 80vw;
     max-width: 450px; 
     align-items: center;
-    margin-bottom: 20px; 
 `
 
 export const LoginFormContainer = styled.div`
@@ -29,7 +28,6 @@ export const LoginFormContainer = styled.div`
     width: 80vw;
     max-width: 450px; 
     align-items: center;
-    margin-bottom: 20px; 
 `
 export const SignUpButtonContainer = styled.div`
     width: 80vw;
