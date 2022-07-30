@@ -1,17 +1,6 @@
 import styled from "styled-components";
 
 
-//criarPosts
-
-
-
-
-
-
-
-
-
-
 //posts
 export const CardContainer = styled.div`
     display: flex;
@@ -31,7 +20,7 @@ export const PostContainer = styled.div`
     width: 70%;
     height: auto;
     background: #FBFBFB;
-    border: 1px solid #b2dfdb;
+    border: 1px solid #F59A73;
     border-radius: 12px;
 
     p {
@@ -50,7 +39,7 @@ export const PostContainer = styled.div`
 `
 
 export const RoundedBox = styled.div`
-    border: 1px solid #b2dfdb; 
+    border: 1px solid #F59A73; 
     border-radius: 15px;
     display: flex; 
     flex-direction: row; 
@@ -86,41 +75,45 @@ export const RoundedBoxContainer = styled.div`
     gap: 10px; 
   `
 
-  // editar dos forms 
+  // editar forms e criar posts
 
 
 export const InputsContainer = styled.div`
 display: flex;
 flex-direction: column;
-width: 100vw;
-max-width: 450px;
+width: 40vw;
+min-width: 70vw;
 align-items: center;
-margin: 15px auto; 
+margin: 30px auto; 
 box-sizing: border-box;
+border: 1px solid #b2dfdb; 
+padding: 10px 10px 10px 10px; 
+box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.5);
+border-radius: 12px;
+background: #FBFBFB;
+
 
 button {
   height: 50px; 
   margin-top: 10px; 
   box-sizing: border-box;
-  min-width: 40vw; 
+  min-width: 60vw; 
+  margin-bottom: 3%; 
 }
 `
 
 export const ContainerText = styled.div`
   input { 
-    min-height: 150px; 
-    min-width: 40vw; 
+    min-height: 100px; 
+    min-width: 60vw; 
     box-sizing: border-box; 
     word-wrap: break-word;
   }
-
-
 `
-
 export const ContainerTitle = styled.div`
   input { 
     min-height: 50px; 
-    min-width: 40vw; 
+    min-width: 60vw; 
     box-sizing: border-box; 
   }
 

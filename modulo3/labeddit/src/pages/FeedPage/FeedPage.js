@@ -31,7 +31,7 @@ const FeedPage = () => {
     const postsCards = posts.map((item)=> {
         return (
         <PostContainer key={item.id}> 
-        <p>Enviado por:{item.username}</p>
+        <p>Enviado por: {item.username}</p>
         <h3>{item.body}</h3>
         <RoundedBoxContainer>
             <RoundedBox>

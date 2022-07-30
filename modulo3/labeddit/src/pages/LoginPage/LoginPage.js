@@ -20,7 +20,7 @@ const LoginPage = () => {
                     onClick={()=> goToSignUpPage(navigate)}
                     type={"submit"}
                     variant={"text"}
-                    color={"secondary"}
+                    color={"primary"}
                     margin={"normal"}
                     fullWidth
                     >

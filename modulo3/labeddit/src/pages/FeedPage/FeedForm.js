@@ -11,11 +11,8 @@ import { createPost } from "../../services/posts"
     const [form, onChange, clear] = useForm({ title: "", body: ""})
 
 
-
-
     const onSubmitForm = (event) => {
         event.preventDefault()
-        console.log(form)
         createPost(form, clear)
     }
 
@@ -50,7 +47,7 @@ import { createPost } from "../../services/posts"
                     <Button 
                     type={"submit"}
                     variant={"contained"}
-                    color={"primary"}
+                    color={"secondary"}
                     > Postar </Button>
                     </InputsContainer>
                 </form>

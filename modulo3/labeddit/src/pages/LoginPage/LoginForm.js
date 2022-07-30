@@ -49,7 +49,7 @@ const LoginForm = () => {
                     <Button 
                     type={"submit"}
                     variant={"contained"}
-                    color={"primary"}
+                    color={"secondary"}
                     fullWidth
                     > Fazer Login </Button>
                     </InputsContainer>
