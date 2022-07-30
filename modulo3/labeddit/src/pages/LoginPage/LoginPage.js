@@ -1,7 +1,6 @@
 import React from "react";
 import { ScreenContainer, LogoImage, SignUpButtonContainer} from "./LoginStyles"
 import labelogo from "../../assets/labelogo.png"
-import useForm from "../../hooks/useForm"
 import Button from "@material-ui/core/Button"; 
 import LoginForm from "./LoginForm";
 import {goToSignUpPage} from "../../routes/coordinator"

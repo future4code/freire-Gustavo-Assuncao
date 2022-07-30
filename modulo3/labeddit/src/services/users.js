@@ -21,3 +21,5 @@ export const signUp = (body, clear, navigate) => {
         })
         .catch((err)=> alert(err.response.data.message))
 }
+
+

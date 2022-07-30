@@ -70,6 +70,7 @@ const SignUpForm = () => {
                     </InputsContainer>
                     </SignUpFormContainer>
                 </form>
+
     )
 }; 
 

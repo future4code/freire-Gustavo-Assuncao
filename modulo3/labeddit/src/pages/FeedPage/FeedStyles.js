@@ -96,32 +96,33 @@ width: 100vw;
 max-width: 450px;
 align-items: center;
 margin: 15px auto; 
-
+box-sizing: border-box;
 
 button {
-  height: 40px; 
+  height: 50px; 
   margin-top: 10px; 
+  box-sizing: border-box;
+  min-width: 40vw; 
 }
 `
 
-export const SignUpFormContainer = styled.div`
-display: flex;
-flex-direction: column;
-width: 80vw;
-max-width: 450px;
-align-items: center;
-margin-bottom: 20px;
-p {
-    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
-    font-size: 10px; 
-}
-
+export const ContainerText = styled.div`
+  input { 
+    min-height: 150px; 
+    min-width: 40vw; 
+    box-sizing: border-box; 
+    word-wrap: break-word;
+  }
 
 
 `
 
-export const LogoImage = styled.img`
-  width: 35vw; 
-  max-width: 250px; 
-  
+export const ContainerTitle = styled.div`
+  input { 
+    min-height: 50px; 
+    min-width: 40vw; 
+    box-sizing: border-box; 
+  }
+
+
 `

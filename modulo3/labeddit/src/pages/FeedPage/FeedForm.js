@@ -1,51 +1,56 @@
 import React from "react";
-import { InputsContainer } from "./FeedStyles"
+import { InputsContainer, ContainerText, ContainerTitle } from "./FeedStyles"
 import TextField from "@material-ui/core/TextField";
 import useForm from "../../hooks/useForm"
 import Button from "@material-ui/core/Button"; 
-import { useNavigate } from "react-router-dom"
-import { signUp } from "../../services/users";
+import useProtectedPage from "../../hooks/useProtectedPage"
+import { createPost } from "../../services/posts"
 
-const FeedForm = () => {
-    const [form, onChange, clear] = useForm({ title: "", body:""})
-    const navigate = useNavigate ()
+    const FeedForm = () => {
+    useProtectedPage()
+    const [form, onChange, clear] = useForm({ title: "", body: ""})
+
+
+
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-        signUp(form, clear, navigate)
+        console.log(form)
+        createPost(form, clear)
     }
 
     return (
             <form onSubmit={onSubmitForm}>
                 <InputsContainer>
+                <ContainerTitle>
                 <TextField 
-                        name={"username"}
-                        value= {form.username}
+                        name={"title"}
+                        value= {form.title}
                         onChange={onChange}
-                        label={"Username"}
+                        label={"Titulo"}
                         variant={"outlined"}
                         margin={"normal"}
-                        fullWidth
                         required
                         autoFocus
-                        type={"name"}
+                        type={"title"}
                     />
+                    </ContainerTitle>
+                    <ContainerText>
                     <TextField 
-                        name={"text"}
+                        name={"body"}
                         value= {form.body}
                         onChange={onChange}
-                        label={"Etext"}
+                        label={"Post"}
                         variant={"outlined"}
                         margin={"normal"}
-                        fullWidth
                         required
                         type={"text"}
                     />
+                    </ContainerText>
                     <Button 
                     type={"submit"}
                     variant={"contained"}
                     color={"primary"}
-                    fullWidth
                     > Postar </Button>
                     </InputsContainer>
                 </form>
