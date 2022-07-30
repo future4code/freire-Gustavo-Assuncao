@@ -85,3 +85,43 @@ export const RoundedBoxContainer = styled.div`
     height: 20px;
     gap: 10px; 
   `
+
+  // editar dos forms 
+
+
+export const InputsContainer = styled.div`
+display: flex;
+flex-direction: column;
+width: 100vw;
+max-width: 450px;
+align-items: center;
+margin: 15px auto; 
+
+
+button {
+  height: 40px; 
+  margin-top: 10px; 
+}
+`
+
+export const SignUpFormContainer = styled.div`
+display: flex;
+flex-direction: column;
+width: 80vw;
+max-width: 450px;
+align-items: center;
+margin-bottom: 20px;
+p {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    font-size: 10px; 
+}
+
+
+
+`
+
+export const LogoImage = styled.img`
+  width: 35vw; 
+  max-width: 250px; 
+  
+`

@@ -6,6 +6,12 @@ export const ScreenContainer = styled.div`
   align-items: center;
   width: 100vw;
   margin-top: 5vh;
+
+  button {
+  height: 50px; 
+  margin-top: 10px; 
+}
+
 `
 
 export const InputsContainer = styled.div`
@@ -15,6 +21,7 @@ export const InputsContainer = styled.div`
   max-width: 450px;
   align-items: center;
   margin-bottom: 20px;
+  
 `
 
 export const SignUpFormContainer = styled.div`
@@ -28,6 +35,7 @@ export const SignUpFormContainer = styled.div`
       font-family: "Roboto", "Helvetica", "Arial", sans-serif;
       font-size: 10px; 
   }
+
 `
 
 export const LogoImage = styled.img`

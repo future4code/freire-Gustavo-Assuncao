@@ -6,6 +6,11 @@ export const ScreenContainer = styled.div`
     align-items: center; 
     width: 100vw;
     margin-top: 5vh; 
+   
+button {
+  height: 50px; 
+  margin-top: 10px; 
+}
 `
 
 export const InputsContainer = styled.div`

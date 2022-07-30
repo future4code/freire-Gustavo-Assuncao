@@ -6,13 +6,15 @@ import { PostContainer, CardContainer, RoundedBox, RoundedBoxContainer } from ".
 import ChatBubbleOutlineRoundedIcon from '@material-ui/icons/ChatBubbleOutlineRounded';
 import ThumbUpOutlinedIcon from '@material-ui/icons/ThumbUpOutlined';
 import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
+import FeedForm from "./FeedForm";
+
 
 const FeedPage = () => {
     useProtectedPage() 
     const [pagination, setPagination] = useState(0);
-    const limitPage = 20;
+    const limitPage = 10;
     const posts = useRequestData([], `${BASE_URL}/posts/?page=${pagination}&size=${limitPage}`) 
-    
+
     const beforeClick = () => {
         if (pagination > 0) {
             setPagination(pagination-1)
@@ -25,7 +27,6 @@ const FeedPage = () => {
         }
       };
    
-
 
     const postsCards = posts.map((item)=> {
         return (
@@ -46,6 +47,7 @@ const FeedPage = () => {
 
     return (
         <>
+        <FeedForm />
         <CardContainer>
             {postsCards}
         </CardContainer>
