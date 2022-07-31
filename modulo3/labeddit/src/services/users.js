@@ -5,7 +5,7 @@ import { goToFeedPage } from "../routes/coordinator"
 export const login = (body, clear, navigate) => {
     axios.post(`${BASE_URL}/users/login`, body)
         .then((res) => {
-            localStorage.setItem("token", res.data.token)
+            localStorage.setItem("token", res.data.token) || sessionStorage.getItem("token"),
             clear()
             goToFeedPage(navigate)
         })
@@ -15,7 +15,7 @@ export const login = (body, clear, navigate) => {
 export const signUp = (body, clear, navigate) => {
     axios.post(`${BASE_URL}/users/signUp`, body)
         .then((res) => {
-            localStorage.setItem("token", res.data.token)
+            localStorage.setItem("token", res.data.token) || sessionStorage.getItem("token"),
             clear()
             goToFeedPage(navigate)
         })

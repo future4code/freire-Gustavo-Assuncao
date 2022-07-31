@@ -6,7 +6,7 @@ import { BASE_URL } from "../constants/urls"
    export const createPost = (body, clear) => {
         axios.post(`${BASE_URL}/posts`, body,{
             headers: {
-                Authorization: localStorage.getItem("token")
+                Authorization: localStorage.getItem("token") || sessionStorage.getItem("token"),
             }
         }).then((res) =>{
             alert(res.data.message)

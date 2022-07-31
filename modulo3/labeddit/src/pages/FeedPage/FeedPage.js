@@ -8,9 +8,13 @@ import ThumbUpOutlinedIcon from '@material-ui/icons/ThumbUpOutlined';
 import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
 import FeedForm from "./FeedForm";
 import Button from "@material-ui/core/Button"; 
+import { useNavigate } from "react-router-dom"
+import { goToPostPage } from "../../routes/coordinator"
+import Loading from "../../components/Loading/Loading"
 
 const FeedPage = () => {
     useProtectedPage() 
+    const navigate = useNavigate()
     const [pagination, setPagination] = useState(0);
     const limitPage = 10;
     const posts = useRequestData([], `${BASE_URL}/posts/?page=${pagination}&size=${limitPage}`);
@@ -27,11 +31,16 @@ const FeedPage = () => {
         }
       };
    
+      const onClickCard = (id) => {
+        goToPostPage(navigate, id)
+      }
+
       console.log(posts)
     const postsCards = posts.map((item)=> {
         return (
-            <>
-        <PostContainer key={item.id}> 
+        <PostContainer 
+        key={item.id}
+        onClick={() => onClickCard(item.id)} > 
         <p>Enviado por: {item.username}</p>
         <h3>{item.body}</h3>
         <RoundedBoxContainer>   
@@ -43,7 +52,6 @@ const FeedPage = () => {
             </RoundedBox>  
             </RoundedBoxContainer>
         </PostContainer>
-        </>
         )
     })  
    
@@ -51,7 +59,7 @@ const FeedPage = () => {
         <>
         <FeedForm />
         <CardContainer>
-            {postsCards}
+        {postsCards.length > 0 ? postsCards : <Loading />}
         </CardContainer>
         <ButtonsContainer>
         <Button 

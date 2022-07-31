@@ -1,4 +1,4 @@
-export const goToLoginPage = (navigate) => {
+  export const goToLoginPage = (navigate) => {
     navigate("/login")
   }
 
@@ -6,7 +6,10 @@ export const goToLoginPage = (navigate) => {
     navigate("/cadastro")
   }
 
-export const goToFeedPage = (navigate) => {
+  export const goToFeedPage = (navigate) => {
       navigate("/")
     }
   
+    export const goToPostPage = (navigate, id) => {
+      navigate(`/posts/${id}/comments`)
+    }
