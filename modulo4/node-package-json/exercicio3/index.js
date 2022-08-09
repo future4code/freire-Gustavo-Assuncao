@@ -1,3 +1,9 @@
-// console.log("Meu primeiro contato com backend")
 
-console.log("Minha cor favorita é", process.argv[2])
+const tarefas = [
+	"Lavar a louça",
+	"Comprar Leite"
+]
+
+tarefas.push("andar de bicicleta","tomar sorvete")
+
+console.table(tarefas)
