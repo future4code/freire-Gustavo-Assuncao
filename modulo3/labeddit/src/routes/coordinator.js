@@ -1,4 +1,5 @@
-  export const goToLoginPage = (navigate) => {
+ 
+ export const goToLoginPage = (navigate) => {
     navigate("/login")
   }
 

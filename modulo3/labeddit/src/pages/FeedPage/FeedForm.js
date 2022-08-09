@@ -5,14 +5,14 @@ import useForm from "../../hooks/useForm"
 import Button from "@material-ui/core/Button"; 
 import useProtectedPage from "../../hooks/useProtectedPage"
 import { createPost } from "../../services/posts"
+import {useNavigate} from "react-router-dom"
 
     const FeedForm = () => {
     useProtectedPage()
     const [form, onChange, clear] = useForm({ title: "", body: ""})
+    
 
-
-    const onSubmitForm = (event) => {
-        event.preventDefault()
+    const onSubmitForm = () => {
         createPost(form, clear)
     }
 
