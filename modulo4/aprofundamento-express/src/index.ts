@@ -6,44 +6,50 @@ const app: Express = express();
 app.use(express.json());
 app.use(cors());
 
-
-// app.get("/searchPlaylist", (req, res)=> {
-  
-//   const authorization = req.headers.authorization 
-//   const namePlaylist = req.query.name
-//   if (!namePlaylist) {
-//     res.send("Digite o nome da playlist")
-//   }
-
-  // const searchUser = users.filter (user =>{
-  //   return user.id === authorization
-  // })
-  // res.send({searchUser})
-//   res.send({namePlaylist, authorization})
-  
+// 1) 
+// app.get("/ping", (req, res) => {          
+//   res.send("Pong! 🏓")
 // })
 
+// 2)
 
-// app.get("/playlists", (req, res)=> {
-  
-//   const authorization = req.headers.authorization 
-//   const newName = req.body.name
+type toDo = {
+  userId: number,
+  id: number, 
+  title: string,
+  completed: boolean
+}
 
-//   const newPlaylist = {
-//     id:Date.now().toString(),
-//     name:newName,
-//     tracks:[]
-//   }
+// 3)
+const toDos: toDo[] = [
+  {
+    userId: 1,
+    id: 1,
+    title: "acordar cedo",
+    completed: true
+  }, 
+  {
+    userId: 2,
+    id: 2,
+    title: "fazer exercício físico",
+    completed: false
+  }, 
+  {
+    userId: 3,
+    id: 3,
+    title: "pagar boletos",
+    completed: false
+  }
+]
 
-//   const newList = users 
+// 4)
+app.get('/todo', (req, res) => {
 
-//   for (let user of newList) {
-//     if (user.id ===authorization) {
-//       user.playlists.push(newPlaylist)
-//     }
-//   }
-//   res.send({authorization, newList})
-//   })
+  const toDoAPI: object[] = toDos.map(toDos1 => {
+      return toDos1
+  })
+  res.status(200).send(toDoAPI)
+})
 
 
 const server = app.listen(process.env.PORT || 3003, () => {
