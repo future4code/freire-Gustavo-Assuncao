@@ -11,28 +11,30 @@ app.use(cors());
 console.log("[Freire] Conectando ao banco");
 
 //2- pegar user pelo id
-app.get('/user/:id', async (req,res) =>{
+app.get('/user/:id', async (req, res) => {
   try {
-    const result = await connection("TodoListUser").where({id: req.params.id})       
-      res.status(200).send(result[0])        
+    const result = await connection("TodoListUser").where({ id: req.params.id })
+    res.status(200).send(result[0])
   } catch (error: any) {
-      res.status(500).send( error.sqlMessage || error.message)
-  }})
+    res.status(500).send(error.sqlMessage || error.message)
+  }
+})
 
 // 5. Criar Tarefa 
-app.get('/task/:id', async (req,res) =>{
+app.get('/task/:id', async (req, res) => {
   try {
     const result = await connection("TodoListTask")
-    .where({taskId: req.params.id})       
-      res.status(200).send(result[0])        
+      .where({ taskId: req.params.id })
+    res.status(200).send(result[0])
   } catch (error: any) {
-      res.status(500).send( error.sqlMessage || error.message)
-  }})
+    res.status(500).send(error.sqlMessage || error.message)
+  }
+})
 
-  // 1- Criar user
-  app.post('/user',async (req,res) => {
-    try {
-         const result = await connection.raw(`
+// 1- Criar user
+app.post('/user', async (req, res) => {
+  try {
+    const result = await connection.raw(`
             INSERT INTO TodoListUser (id,name,nickname,email)
             VALUES( 
                 "${req.body.id}",
@@ -40,16 +42,16 @@ app.get('/task/:id', async (req,res) =>{
                 "${req.body.nickname}",
                 "${req.body.email}"
             );`)
-                res.status(201).send("Cadastrado com sucesso")
-    } catch (error:any) {
-                res.status(500).send(error.sqlMessage || error.message)
-    }
+    res.status(201).send("Cadastrado com sucesso")
+  } catch (error: any) {
+    res.status(500).send(error.sqlMessage || error.message)
+  }
 })
 
 // 4. Criar Tarefa 
-app.post('/user',async (req,res) => {
+app.post('/user', async (req, res) => {
   try {
-       const result = await connection.raw(`
+    const result = await connection.raw(`
           INSERT INTO TodoListTask (title,description,limitDate,creatorUserId)
           VALUES( 
               "${req.body.title}",
@@ -57,24 +59,24 @@ app.post('/user',async (req,res) => {
               "${req.body.limitDate}".,
               "${req.body.creatorUserId}"
           );`)
-              res.status(201).send("Cadastrado com sucesso")
-  } catch (error:any) {
-              res.status(500).send(error.sqlMessage || error.message)
+    res.status(201).send("Cadastrado com sucesso")
+  } catch (error: any) {
+    res.status(500).send(error.sqlMessage || error.message)
   }
 })
 
 
 //3- Editar user pelo id
-app.put('/user/edit/:id',async (req,res) => {
+app.put('/user/edit/:id', async (req, res) => {
   try {
-      const result = await connection("TodoListUser")
+    const result = await connection("TodoListUser")
       .update({
-          name: req.body.nome,
-          nickname: req.body.email         
-      }).where({id: req.params.id})
-      res.status(200).send("Editado com sucesso")
-  } catch (error:any) {
-      res.status(500).send(error.sqlMessage || error.message)
+        name: req.body.nome,
+        nickname: req.body.email
+      }).where({ id: req.params.id })
+    res.status(200).send("Editado com sucesso")
+  } catch (error: any) {
+    res.status(500).send(error.sqlMessage || error.message)
   }
 })
 
