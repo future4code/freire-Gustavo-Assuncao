@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import insertUser from "../data/insertUser";
-import { userInput, userInsert } from "../types";
+import { userInput, userData } from "../types";
 
 
 export default async function createCharacter(req: Request,res: Response): Promise<void> {
@@ -12,14 +12,14 @@ export default async function createCharacter(req: Request,res: Response): Promi
             throw new Error("O nome, email, password devem ser passados!");
         }
 
-        const userInsert: userInsert ={
+        const userData: userData ={
             id: Date.now().toString(),
             name: name,
             email: email,
             password: password
         }
 
-        const answer = await insertUser(userInsert)
+        const answer = await insertUser(userData)
         
         res.status(201).send({message:answer})
 

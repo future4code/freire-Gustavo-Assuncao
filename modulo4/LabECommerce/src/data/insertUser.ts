@@ -1,7 +1,7 @@
-import { userInsert } from "../types";
+import { userData } from "../types";
 import { connection } from "../connection";
 
-export default async function insertUser(insertUser:userInsert):Promise<string> {
+export default async function insertUser(insertUser:userData):Promise<string> {
     
     const {id, name, email, password} = insertUser
         await connection("labecommerce_users")

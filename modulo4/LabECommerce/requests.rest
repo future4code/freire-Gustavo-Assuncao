@@ -4,9 +4,9 @@ POST http://localhost:3003/users
 Content-Type: application/json
 
 {
-    "name":"Antony",
-    "email":"tony@gmail.com" ,
-    "password": "badworld"
+    "name":"Leticia",
+    "email":"let_m@gmail.com" ,
+    "password": "sss456"
 }
 
 ### Buscar todos os usuários

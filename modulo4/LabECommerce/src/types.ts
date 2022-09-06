@@ -4,7 +4,7 @@ export type userInput = {
     password: string
 };
 
-export type userInsert = {
+export type userData = {
     id: string,
     name: string, 
     email: string, 
