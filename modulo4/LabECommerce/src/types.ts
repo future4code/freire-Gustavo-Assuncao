@@ -1,18 +1,12 @@
-export type movie = {
-    id: number,
-    title: string, 
-    year: number
-}
-
-export enum GENDER {
-    MALE = "MALE",
-    FEMALE = "FEMALE", 
-    OTHER = "OTHER"
-}
-
-export type character = {
-    id: number,
+export type userInput = {
     name: string, 
-    gender: GENDER, 
-    description?: string
+    email: string, 
+    password: string
+};
+
+export type userInsert = {
+    id: string,
+    name: string, 
+    email: string, 
+    password: string
 }
