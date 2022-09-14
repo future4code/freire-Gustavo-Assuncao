@@ -1,0 +1,32 @@
+### Cadastrar usuário
+
+POST http://localhost:3003/users
+Content-Type: application/json
+
+{
+    "name":"Leticia",
+    "email":"let_m@gmail.com" ,
+    "password": "sss456"
+}
+
+### Buscar todos os usuários
+
+GET http://localhost:3003/users
+
+### Buscar todos os produtos
+
+GET http://localhost:3003/products
+
+### Editar Registro de compra
+
+POST http://localhost:3003/purchases
+
+### Busca compras de um usuário
+
+POST http://localhost:3003/users/:user_id/purchases
+
+### Busca compras de um usuário
+
+POST http://localhost:3003/users/:user_id/purchases
+
+###
