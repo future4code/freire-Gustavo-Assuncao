@@ -1,0 +1,32 @@
+# @name signup
+
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "name": "Br refatorando", 
+   "nickname": "lbr", 
+   "email": "testando@email.com" ,
+   "password": "labenubr"
+}
+
+###
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFmM2Y0YzUxLTFjMWMtNGFhZi04NDYwLTQ5YTNlYzU2MGM3MSIsImlhdCI6MTY2Mjk5OTQ2MywiZXhwIjoxNjYzMDg1ODYzfQ.FAvX1OOxTqZN-gzC-ErS0Gb3ru0ZMBYGOWXCF9q7OpE
+
+PUT http://localhost:3003/user/edit
+Authorization: {{token}}
+Content-Type: application/json
+
+{
+   "name": "Bruno Amorim" 
+}
+
+###
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+   "email":"testando@email.com",
+   "password":"labenubr" 
+}
