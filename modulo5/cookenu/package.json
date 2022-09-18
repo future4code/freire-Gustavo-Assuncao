@@ -10,13 +10,15 @@
     "author": "Labenu",
     "license": "ISC",
     "dependencies": {
+        "@types/bcryptjs": "^2.4.2",
+        "bcryptjs": "^2.4.3",
         "cache": "^3.0.0",
         "clear": "^0.1.0",
         "cors": "^2.8.5",
         "dotenv": "^8.2.0",
         "express": "^4.17.1",
         "jsonwebtoken": "^8.5.1",
-        "knex": "^0.21.5",
+        "knex": "^0.21.21",
         "mysql": "^2.18.1"
     },
     "devDependencies": {
