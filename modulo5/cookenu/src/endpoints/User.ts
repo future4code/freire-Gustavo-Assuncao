@@ -1,14 +1,18 @@
 import { Request, Response } from "express";
 import { MissingFields } from "../error/MissingFields";
 
-
-class UserEndpoint {
+class CreateUser {
    async create(req:Request, res:Response) {
       try{
-         const { nome, email, senha } = req.body
+         const { name, email, password } = req.body
 
-         if(!nome || !email || !senha) {
+         if(!name || !email || !password) {
             throw new MissingFields()
+         }
+
+         if(password.length < 6 ) {
+            throw new Error("A senha deve conter no mínimo 6 caracters!");
+            
          }
 
       }catch (error:any) {
@@ -17,6 +21,6 @@ class UserEndpoint {
    }
 }
 
-export default UserEndpoint;
+export default CreateUser;
 
 

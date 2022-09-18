@@ -1,7 +1,7 @@
 import { app } from "./app"
-import UserEndpoint from "./endpoints/User"
+import CreateUser from "./endpoints/User"
 
-const userEndpoint = new UserEndpoint()
+const createUser = new CreateUser()
 
-app.post("/criar-usuario", userEndpoint.create)
+app.post("/create-user", createUser.create)
 
