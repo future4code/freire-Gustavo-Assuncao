@@ -1,0 +1,39 @@
+# @name signup
+
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "name": "BRADMIN", 
+   "nickname": "lbr", 
+   "email": "bradmin@email.com" ,
+   "password": "labenubr",
+   "role":"ADMIN"
+}
+
+###
+
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBmNTk2NDdiLTIxMGMtNDI3YS1hNzBhLTUzMGM0MmI2YTBlOCIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjMwNzc5NzIsImV4cCI6MTY2MzE2NDM3Mn0.-8UQn4RzMJbs248jz-Fqnp4S0m2kfSXZfSiCPEII480
+
+@tokenAdmin = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE5MDJlYTU5LTZjY2ItNDk1Mi04ZjQ3LTMwYThjZDFhNmJjMiIsInJvbGUiOiJBRE1JTiIsImlhdCI6MTY2MzA3ODUzNiwiZXhwIjoxNjYzMTY0OTM2fQ.AnvgrLu0L49BrUJvveofHJ0X4Y2EHkwYmSgNXnXMxko
+
+PUT http://localhost:3003/user/edit
+Authorization: {{tokenAdmin}}
+Content-Type: application/json
+
+{
+   "name": "Bruno Amorim" 
+}
+
+###
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+   "email":"hashaeada@email.com",
+   "password":"labenubr" 
+}
+
+###
+GET http://localhost:3003/user/profile
+Authorization: {{tokenAdmin}}
