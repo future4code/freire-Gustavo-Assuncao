@@ -30,7 +30,7 @@ class UserData extends BaseDataBase {
             name: result[0].name,
             email: result[0].email
         }
-
+        console.log(user)
         return user
     }
 

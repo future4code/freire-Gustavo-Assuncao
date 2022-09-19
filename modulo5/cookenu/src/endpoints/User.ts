@@ -90,7 +90,7 @@ class UserEndpoint {
 
          const user = await userData.getUserById(id)
 
-         res.status(200).send(user)
+         res.status(200).send(userData)
          
       } catch (error:any) {
          res.status(error.statusCode || 500).send({message: error.message})
