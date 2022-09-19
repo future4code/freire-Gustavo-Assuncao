@@ -10,7 +10,6 @@ interface TypeUser {
 }
 
 class Authenticator {
-    static generateToken: any;
 
     generateToken(typeUser: TypeUser): string {
 
@@ -24,13 +23,13 @@ class Authenticator {
         return token;
     }
 
-    // getTokenData(token: string){
+    getTokenData(token: string){
 
-    //     const payload = jwt.verify(token,process.env.JWT_KEY as string) as any
+        const payload = jwt.verify(token,process.env.JWT_KEY as string) as any
 
-    //     return payload.typeUser
+        return payload.typeUser
 
-    // }
+    }
 }
 
 export default Authenticator;
