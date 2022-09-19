@@ -4,6 +4,7 @@ import { MissingFields } from "../error/MissingFields";
 import IdGenerator from "../services/IdGenerator";
 import  User  from "../model/User";
 import HashManager from "../services/HashManager";
+import Authenticator from "../services/Authenticator";
 
 class UserEndpoint {
    async create(req:Request, res:Response) {
@@ -34,8 +35,11 @@ class UserEndpoint {
 
          const user = new User(id, name, email, hashPassword)
 
-         console.log(user);
-         
+         const response = await userData.createUser(user)
+
+         const token = new Authenticator.generateToken(id)
+
+         res.status(201).send({message:response, token})
       }catch (error:any) {
          res.status(error.statusCode || 500).send({message: error.message})
       }

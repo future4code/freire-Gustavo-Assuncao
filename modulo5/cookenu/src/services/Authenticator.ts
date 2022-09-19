@@ -1,36 +1,36 @@
-// import * as jwt from "jsonwebtoken";
-// import dotenv from "dotenv"
+import * as jwt from "jsonwebtoken";
+import dotenv from "dotenv"
 // import { USER_ROLES } from "../model/User";
 
-// dotenv.config()
+dotenv.config()
 
-// interface TypeUser {
-//     id:string,
-//     role:USER_ROLES
-// }
+interface TypeUser {
+    id:string,
+    // role:USER_ROLES
+}
 
-// class Authenticator {
+class Authenticator {
+    static generateToken: any;
 
+    generateToken(typeUser: TypeUser): string {
 
-//     generateToken(typeUser: TypeUser): string {
+        const token = jwt.sign(
+            {
+                typeUser
+            },
+            process.env.JWT_KEY as string,
+            { expiresIn: process.env.JWT_EXPIRATION_TIME }
+        )
+        return token;
+    }
 
-//         const token = jwt.sign(
-//             {
-//                 typeUser
-//             },
-//             process.env.JWT_KEY as string,
-//             { expiresIn: process.env.JWT_EXPIRATION_TIME }
-//         )
-//         return token;
-//     }
+    // getTokenData(token: string){
 
-//     getTokenData(token: string){
+    //     const payload = jwt.verify(token,process.env.JWT_KEY as string) as any
 
-//         const payload = jwt.verify(token,process.env.JWT_KEY as string) as any
+    //     return payload.typeUser
 
-//         return payload.typeUser
+    // }
+}
 
-//     }
-// }
-
-// export default Authenticator
+export default Authenticator;
