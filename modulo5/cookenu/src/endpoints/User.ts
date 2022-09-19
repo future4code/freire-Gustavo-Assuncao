@@ -19,7 +19,6 @@ class UserEndpoint {
             throw new Error("A senha deve conter no mínimo 6 caracters!");
             
          }
-
          const userData = new UserData()
 
          const emailAlredyExist = await userData.getUserByEmail(email)
@@ -40,10 +39,43 @@ class UserEndpoint {
          const token = new Authenticator.generateToken(id)
 
          res.status(201).send({message:response, token})
+
       }catch (error:any) {
          res.status(error.statusCode || 500).send({message: error.message})
       }
    }
+
+   async login(req:Request, res:Response) {
+      try {
+         const { email, password} = req.body
+
+         if (!email || !password) {
+            throw new MissingFields();
+         }
+
+         const userData = new UserData()
+
+         const userDB = await userData.getUserByEmail(email)
+
+         if(!userDB) {
+            throw new Error("Email não cadastrado na aplicação")
+         }
+
+         const correctPassword = await new HashManager().compare(password,userDB.getPassword())
+
+         if(!correctPassword) {
+            throw new Error("A senha está incorreta!");
+         }
+
+         const token = new Authenticator().generateToken({id: userDB.getId()})
+
+         res.status(200).send({message: "Usuário logado com sucesso", token})
+
+      } catch (error:any) {
+         res.status(error.statusCode || 500).send({message: error.message})
+      }
+   }
+
 }
 
 export default UserEndpoint;
