@@ -1,4 +1,5 @@
-import User from "../model/User";
+import { Console } from "console";
+import User, { UserBD } from "../model/User";
 import { BaseDataBase } from "./BaseDataBase";
 
 class UserData extends BaseDataBase {
@@ -17,6 +18,22 @@ class UserData extends BaseDataBase {
 
             return new User(result[0].id,result[0].name,result[0].email,result[0].password)
     }
+    async getUserById(id: string): Promise<UserBD> {
+
+        const result = await this.getConnetion()
+            .select("*")
+            .from(UserData.tableName)
+            .where({ id })
+
+        const user: UserBD = {
+            id: result[0].id,
+            name: result[0].name,
+            email: result[0].email
+        }
+        console.log(user)
+        return user
+    }
+
 
     async createUser(user:User):Promise<string>{
 

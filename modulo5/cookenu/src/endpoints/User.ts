@@ -31,12 +31,11 @@ class UserEndpoint {
          const id = new IdGenerator().idGenerator();
          const hashPassword = await new HashManager().hash(password)
 
-
          const user = new User(id, name, email, hashPassword)
 
          const response = await userData.createUser(user)
 
-         const token = new Authenticator.generateToken(id)
+         const token = new Authenticator().generateToken({ id })
 
          res.status(201).send({message:response, token})
 
@@ -76,6 +75,27 @@ class UserEndpoint {
       }
    }
 
+   async getProfile(req:Request, res:Response) {
+      try {
+         
+         const token = req.headers.authorization
+
+         if(!token) {
+            throw new Error("O token deve ser passado!");
+         }
+
+         const id = new Authenticator().getTokenData(token)
+
+         const userData = new UserData()
+
+         const user = await userData.getUserById(id)
+
+         res.status(200).send(userData)
+         
+      } catch (error:any) {
+         res.status(error.statusCode || 500).send({message: error.message})
+      }
+   }
 }
 
 export default UserEndpoint;
